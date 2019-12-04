@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+$key-color: white;
+$background-color: rgb(20, 20, 20);
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+* {
+  font-family: "Maven Pro", sans-serif;
+  margin: 0;
+  color: $key-color;
+  background-color: $background-color;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.Font {
+  &-quicksand {
+    font-family: "Quicksand", sans-serif;
+  }
+}
+
+.Blank {
+  &-xxsmall {
+    padding-top: 1vh;
+  }
+  &-xsmall {
+    padding-top: 5vh;
+  }
+  &-small {
+    padding-top: 10vh;
+  }
+  &-medium {
+    padding-top: 20vh;
+  }
+  &-large {
+    padding-top: 30vh;
+  }
+}
+
+.Text {
+  // margin-left: 3rem;
+  // margin-right: 1rem;
+  &-xsmall {
+    font-size: calc(0.7rem + 0.5vw);
+  }
+  &-small {
+    font-size: calc(1rem + 0.6vw);
+  }
+  &-medium {
+    font-size: calc(1.5rem + 1vw);
+  }
+  &-large {
+    font-size: calc(2rem + 1.5vw);
+  }
+  &-xlarge {
+    font-size: calc(3.5rem + 2vw);
+  }
+  &-xxlarge {
+    font-size: calc(6.5rem + 4vw);
+  }
+  &-bold {
+    font-weight: 900;
+  }
+  &-light {
+    font-weight: 400;
+  }
+  &-xlight {
+    font-weight: 100;
+  }
+  &-wide {
+    letter-spacing: 10px;
+  }
+  &-xwide {
+    letter-spacing: 50px;
+  }
+}
+
+.Style {
+  &-flex {
+    display: flex;
+    flex-wrap: wrap;
+    &-center {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      word-break: break-all;
+    }
+  }
+  &-center {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.Align {
+  &-vertical {
+    &-middle {
+      vertical-align: middle;
+    }
+  }
+}
+
+.Background {
+  &-header {
+    background-color: #2c4ac4;
+    padding-bottom: 30px;
+  }
+  &-header-index {
+    background-color: #2c4ac4;
+    padding-bottom: 10px;
+  }
+  &-background {
+    background-color: $background-color;
+  }
+}
+
+.Module {
+  &-header {
+    position: sticky;
+    top: 0;
+  }
+  &-mainlogo {
+    @extend .Text-bold;
+    @extend .Text-large;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 900;
+    color: white;
+    padding-left: 20px;
+    padding-top: 3px;
+
+    float: left;
+    transition: color 0.1s ease-in-out;
+  }
+  &-mainlogo:hover {
+    color: rgb(158, 188, 255);
+  }
+  &-mainlogo:active {
+    margin-top: 0;
+    color: #2c4ac4;
+  }
+
+  &-loginbutton {
+    float: right;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 13px;
+    margin-right: calc(5px + 1vw);
+    color: white;
+
+    transition: color 0.1s ease-in-out;
+  }
+  &-loginbutton:hover {
+    color: rgb(158, 188, 255);
+  }
+  &-loginbutton:active {
+    color: #2c4ac4;
+  }
+
+  &-header-index {
+    margin-left: 1.2rem;
+
+    color: black;
+    text-decoration: none;
+  }
+  &-notfound {
+    font-weight: 900;
+    animation: notfound-animate 5s infinite;
+  }
+  @keyframes notfound-animate {
+    0% {
+      color: white;
+      transform: rotate(0deg);
+      font-size: 120px;
+    }
+    50% {
+      color: #2c4ac4;
+      font-size: calc(120px + 11vw);
+      transform: rotate(360deg);
+    }
+    100% {
+      font-size: 120px;
+      color: white;
+      transform: rotate(720deg);
+    }
+  }
+
+  &-notfoundmove {
+    margin-top: 2rem;
+    animation: notfoundmove-animate 5s infinite;
+  }
+  @keyframes notfoundmove-animate {
+    0% {
+      margin-top: 2rem;
+    }
+    50% {
+      margin-top: 8rem;
+    }
+    100% {
+      margin-top: 2rem;
+    }
+  }
+  &-input {
+    margin-left: calc(50vw - 180px);
+    margin-right: calc(50vw - 180px);
+  }
+  &-errormessage {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: red;
+    animation: errormessage-animate 0.5s ease-in-out;
+  }
+  @keyframes errormessage-animate {
+    0% {
+      color: color(24, 24, 24);
+    }
+    100% {
+      color: red;
+    }
+  }
+}
+
+// color_key
+// Main key #FFCA12
+// Sub Key #
