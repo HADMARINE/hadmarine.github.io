@@ -49,7 +49,9 @@ export default class Profile extends Component {
             <Content>Hojoon Lee, a.k.a HADMARINE</Content>
 
             <Title>Birth</Title>
-            <Content>Feb 12, 2003. 17 Years old.</Content>
+            <Content>
+              Feb 12, 2003. 17 Years old. (16 in General Age counting)
+            </Content>
 
             <Title>Education</Title>
             <Contents>Graduated Seoul Sunil Elementary School</Contents>
