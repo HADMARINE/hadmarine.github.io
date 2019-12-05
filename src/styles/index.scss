@@ -137,6 +137,20 @@ a {
   }
 }
 
+.Animation {
+  &-PageUpOpacity {
+    animation: PageUpInitial-Animate 1s ease-in-out;
+    @keyframes PageUpInitial-Animate {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 .Module {
   &-header {
     position: sticky;
