@@ -12,6 +12,7 @@ import BackPhoto from "../components/BackgroundImg";
 import SocialLinks from "../components/SocialLinks";
 import Header from "../components/Header";
 import Profile from "../components/Profile";
+import CardScroll from "../components/CardScroll";
 
 //IMAGE
 import backImg from "../image/back.png";
@@ -27,9 +28,9 @@ export default class MainPage extends Component {
     return (
       <div>
         <GlobalStyle />
-        <Headroom>
+        {/* <Headroom>
           <Header />
-        </Headroom>
+        </Headroom> */}
         <div className="Style-center">
           <BackPhoto src={backImg} margin={0} />
           <BackPhoto src={profileImg} margin={150} />
@@ -42,9 +43,9 @@ export default class MainPage extends Component {
           <div className="Blank-medium" />
           <SocialLinks />
           <div className="Blank-medium" />
-
           <div className="Blank-large" />
           <Profile />
+          <CardScroll />
         </div>
       </div>
     );
