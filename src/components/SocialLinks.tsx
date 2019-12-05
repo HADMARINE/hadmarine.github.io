@@ -28,23 +28,43 @@ export default class SocialLinks extends Component {
     return (
       <div className="Animation-PageUpOpacity Animation-PageUpSpacing">
         <GlobalStyle />
-        <a href="http://git.hadmarine.com" target="_blank">
+        <a
+          href="http://git.hadmarine.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <img src={Github} alt="Github logo" />
         </a>
-        <a href="http://fb.hadmarine.com" target="_blank">
+        <a
+          href="http://fb.hadmarine.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <img src={Facebook} alt="Facebook logo" />
         </a>
-        <a href="https://open.kakao.com/o/sTY9SYNb" target="_blank">
+        <a
+          href="https://open.kakao.com/o/sTY9SYNb"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <img src={Kakaotalk} alt="Kakaotalk logo" />
         </a>
         {window.innerWidth > 550 ? <></> : <br />}
-        <a href="https://t.me/HADMARINE" target="_blank">
+        <a
+          href="https://t.me/HADMARINE"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <img src={Telegram} alt="Facebook logo" />
         </a>
-        <a href="mailto:contact@hadmarine.com" target="_blank">
+        <a
+          href="mailto:contact@hadmarine.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <img src={Mail} alt="Mail logo" />
         </a>
-        <a href="tel:+827046069485" target="_blank">
+        <a href="tel:+827046069485" rel="noopener noreferrer" target="_blank">
           <img src={Phone} alt="Phone logo" />
         </a>
       </div>
