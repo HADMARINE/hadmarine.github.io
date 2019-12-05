@@ -7,7 +7,7 @@ import Headroom from "react-headroom";
 import "../styles/index.scss";
 
 //COMPONENTS
-import IntroductPhotoSection from "../components/IntroducePhotoSection";
+// import IntroductPhotoSection from "../components/IntroducePhotoSection";
 import BackPhoto from "../components/BackgroundImg";
 import SocialLinks from "../components/SocialLinks";
 import Header from "../components/Header";
@@ -16,17 +16,8 @@ import Header from "../components/Header";
 import backImg from "../image/back.png";
 import profileImg from "../image/profile.png";
 
-//STYLED-COMPONENTS
 const GlobalStyle = createGlobalStyle`
-    animation: PageUpInitial-Animate 1s ease-in-out;
-    @keyframes PageUpInitial-Animate{
-        0%{
-            opacity:0;
-        }
-        100%{
-            opacity:1;
-        }
-    }
+
 `;
 
 export default class MainPage extends Component {
@@ -48,7 +39,7 @@ export default class MainPage extends Component {
           <SocialLinks />
           <p className="Text"></p>
 
-          <BackPhoto src={profileImg} margin={100} />
+          <BackPhoto src={profileImg} margin={70} />
           <div className="Blank-large" />
         </div>
       </div>
