@@ -26,8 +26,8 @@ export default class MainPage extends Component {
           <p className="Text-xlarge Text-bold" style={{ marginTop: "10rem" }}>
             HADMARINE
           </p>
-          <p className="Text-small">Self-directing Active Developer</p>
-          <div className="Blank-small" />
+          <p className="Text-small">Self-directing Full-stack Developer</p>
+          <div className="Blank-medium" />
           <SocialLinks />
           <p className="Text"></p>
 
