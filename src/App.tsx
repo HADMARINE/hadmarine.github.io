@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
 
 import Home from "./pages/MainPage";
 import NotFound from "./pages/NotFound";
 
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
+import "./styles/index.scss";
 
 const App: React.FC = () => {
   return (
