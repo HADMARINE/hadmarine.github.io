@@ -62,6 +62,7 @@ export default class Profile extends Component {
               Year 2017, Completed Seoul Western Education Office's Information
               gifted education.
             </Contents>
+            <Contents>Year 2019, Joined Dev8, Web Programming Club</Contents>
             <Content>Year 2019, Joined HMH, Big data Research Club</Content>
 
             <Title>Tech Ability</Title>
