@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/index.scss";
 
 const App: React.FC = () => {
+  document.title = "HADMARINE - Full Stack Web Developer";
   return (
     <div>
       <Router>
