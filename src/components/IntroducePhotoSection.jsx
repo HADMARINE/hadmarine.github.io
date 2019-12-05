@@ -12,7 +12,6 @@ export default class IntroducePhotoSection extends Component {
         className="Style-flex-center"
         style={{
           // marginTop: "calc( 50vh - 18rem - 8vw )",
-          marginTop: "3rem",
           marginBottom: " calc( 10rem - 15vw )"
         }}
       >
@@ -24,7 +23,7 @@ export default class IntroducePhotoSection extends Component {
           interval={5000}
           showThumbs={false}
           useKeyboardArrows={true}
-          width={"calc( 15rem + 50vw )"}
+          width={"calc( 8rem + 55vw )"}
         >
           <div>
             <img src={code} alt="Codes" />
