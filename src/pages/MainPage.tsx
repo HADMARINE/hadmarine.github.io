@@ -36,6 +36,7 @@ export default class MainPage extends Component {
         <GlobalStyle />
         <Headroom>
           <Header />
+        </Headroom>
         <div className="Style-center">
           <BackPhoto src={backImg} margin={0} />
           {/* <IntroductPhotoSection /> */}
