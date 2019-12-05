@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
+import "../styles/index.scss";
+
 import Github from "../image/github.png";
 import Facebook from "../image/facebook.svg";
 import Kakaotalk from "../image/kakaotalk.png";
@@ -24,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 export default class SocialLinks extends Component {
   render() {
     return (
-      <div>
+      <div className="Animation-PageUpOpacity Animation-PageUpSpacing">
         <GlobalStyle />
         <a href="http://git.hadmarine.com" target="_blank">
           <img src={Github} alt="Github logo" />
@@ -35,6 +37,7 @@ export default class SocialLinks extends Component {
         <a href="https://open.kakao.com/o/sTY9SYNb" target="_blank">
           <img src={Kakaotalk} alt="Kakaotalk logo" />
         </a>
+        {window.innerWidth > 550 ? <></> : <br />}
         <a href="https://t.me/HADMARINE" target="_blank">
           <img src={Telegram} alt="Facebook logo" />
         </a>
