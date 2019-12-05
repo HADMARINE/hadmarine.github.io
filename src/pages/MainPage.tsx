@@ -10,6 +10,7 @@ import "../styles/index.scss";
 import IntroductPhotoSection from "../components/IntroducePhotoSection";
 import BackPhoto from "../components/BackgroundImg";
 import SocialLinks from "../components/SocialLinks";
+import Header from "../components/Header";
 
 //IMAGE
 import backImg from "../image/back.png";
@@ -32,7 +33,9 @@ export default class MainPage extends Component {
   render() {
     return (
       <div>
-        <Headroom>헤더</Headroom>
+        <GlobalStyle />
+        <Headroom>
+          <Header />
         <div className="Style-center">
           <BackPhoto src={backImg} margin={0} />
           {/* <IntroductPhotoSection /> */}
