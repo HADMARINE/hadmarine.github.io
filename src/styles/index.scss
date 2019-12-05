@@ -139,13 +139,30 @@ a {
 
 .Animation {
   &-PageUpOpacity {
-    animation: PageUpInitial-Animate 1s ease-in-out;
-    @keyframes PageUpInitial-Animate {
+    animation: PageUpOpacity-Animate 1s ease-in-out;
+    @keyframes PageUpOpacity-Animate {
       0% {
         opacity: 0;
       }
       100% {
         opacity: 1;
+      }
+    }
+  }
+  &-PageUpSpacing {
+    img {
+      animation: PageUpSpacing-Animate 1s ease;
+      @keyframes PageUpSpacing-Animate {
+        $initialMargin: 3rem;
+        $finalMargin: 1rem;
+        0% {
+          margin-left: $initialMargin;
+          margin-right: $initialMargin;
+        }
+        100% {
+          margin-left: $finalMargin;
+          margin-right: $finalMargin;
+        }
       }
     }
   }
