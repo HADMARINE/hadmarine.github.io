@@ -28,12 +28,12 @@ export default class MainPage extends Component {
     return (
       <div>
         <GlobalStyle />
-        {/* <Headroom>
+        <Headroom>
           <Header />
-        </Headroom> */}
+        </Headroom>
         <div className="Style-center">
           <BackPhoto src={backImg} margin={0} />
-          <BackPhoto src={profileImg} margin={150} />
+          <BackPhoto src={profileImg} margin={160} />
 
           {/* <IntroductPhotoSection /> */}
           <p className="Text-xlarge Text-bold" style={{ marginTop: "10rem" }}>
@@ -45,6 +45,7 @@ export default class MainPage extends Component {
           <div className="Blank-medium" />
           <div className="Blank-large" />
           <Profile />
+          <div className="Blank-large" />
           <CardScroll />
         </div>
       </div>
