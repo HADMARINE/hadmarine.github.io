@@ -15,6 +15,19 @@ import SocialLinks from "../components/SocialLinks";
 import backImg from "../image/back.png";
 import profileImg from "../image/profile.png";
 
+//STYLED-COMPONENTS
+const GlobalStyle = createGlobalStyle`
+    animation: PageUpInitial-Animate 1s ease-in-out;
+    @keyframes PageUpInitial-Animate{
+        0%{
+            opacity:0;
+        }
+        100%{
+            opacity:1;
+        }
+    }
+`;
+
 export default class MainPage extends Component {
   render() {
     return (
