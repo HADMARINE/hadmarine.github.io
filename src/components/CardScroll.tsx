@@ -1,22 +1,27 @@
-// import React, { Component } from "react";
-// import styled from "styled-components";
-
-// import "../styles/index.scss";
-
-// const Wrapper = styled.div``;
-
-// export default class CardScrollClass extends Component {
-//   render() {
-//     return (
-//       <Wrapper>
-//         <div></div>
-//       </Wrapper>
-//     );
-//   }
-// }
-
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Jumbotron } from "react-bootstrap";
+
+import "../styles/index.scss";
+
+const Wrapper = styled.div`
+  /* display: flex; */
+  /* justify-content: center; */
+  text-align: left;
+  width: 20rem;
+  height: 20rem;
+  background-color: rgb(20, 20, 20);
+  border-radius: 10px;
+  margin: 1rem;
+`;
+
+const Title = styled.div`
+  text-align: center;
+`;
+
+const Content = styled.div`
+  text-align: left;
+`;
 
 export default class Product extends Component<any> {
   constructor(props: any) {
@@ -26,28 +31,17 @@ export default class Product extends Component<any> {
     img: this.props.img,
     title: this.props.title,
     content: this.props.content,
-    link: this.props.link,
-    maclink: this.props.maclink
+    link: this.props.link
   };
   handleOpenLink = () => {};
   render() {
     return (
-      <>
-        <div
-          // className="max-w-sm rounded overflow-hidden shadow-lg"
-          style={{ margin: "1rem" }}
-        >
-          {/* <img className="w-full" src={this.state.img} alt="Product Photo" /> */}
-          <div className="px-6 py-4">
-            {/* <div className="font-bold text-xl mb-2">{this.state.title}</div> */}
-            <p className="text-700 text-base">{this.state.content}</p>
-          </div>
-          <div
-          // className="px-6 py-4"
-          // style={{ display: "flex", justifyContent: "center" }}
-          ></div>
-        </div>
-      </>
+      <Wrapper>
+        <Jumbotron style={{ margin: "10px" }}>
+          <Title>Hello</Title>
+          <p className="Text-small">world</p>
+        </Jumbotron>
+      </Wrapper>
     );
   }
 }
