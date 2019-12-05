@@ -14,6 +14,7 @@ export default class MainPage extends Component {
         >
           Hello World!
         </p>
+        <Headroom>헤더</Headroom>
       </div>
     );
   }
