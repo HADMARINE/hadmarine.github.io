@@ -11,11 +11,13 @@ import "../styles/index.scss";
 import BackPhoto from "../components/BackgroundImg";
 import SocialLinks from "../components/SocialLinks";
 import Header from "../components/Header";
+import Profile from "../components/Profile";
 
 //IMAGE
 import backImg from "../image/back.png";
 import profileImg from "../image/profile.png";
 
+//STYLED-COMPONENTS
 const GlobalStyle = createGlobalStyle`
 
 `;
@@ -30,6 +32,8 @@ export default class MainPage extends Component {
         </Headroom>
         <div className="Style-center">
           <BackPhoto src={backImg} margin={0} />
+          <BackPhoto src={profileImg} margin={150} />
+
           {/* <IntroductPhotoSection /> */}
           <p className="Text-xlarge Text-bold" style={{ marginTop: "10rem" }}>
             HADMARINE
@@ -37,10 +41,10 @@ export default class MainPage extends Component {
           <p className="Text-small">Self-directing Full-stack Developer</p>
           <div className="Blank-medium" />
           <SocialLinks />
-          <p className="Text"></p>
+          <div className="Blank-medium" />
 
-          <BackPhoto src={profileImg} margin={70} />
           <div className="Blank-large" />
+          <Profile />
         </div>
       </div>
     );
