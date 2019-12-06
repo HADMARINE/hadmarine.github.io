@@ -57,14 +57,17 @@ export default class Profile extends Component {
             <Contents>Graduated Seoul Sunil Elementary School</Contents>
             <Contents>Graduated Seoul Daeshin Middle School</Contents>
             <Content>
-              Currently attending Sunrin Internet High School Software Division
+              Currently attending Sunrin Internet High School{" "}
+              <b>Software Division</b>
             </Content>
 
             <Contents>
-              Year 2017, Completed Seoul Western Education Office's Information
-              gifted education.
+              Year 2017, Completed Seoul Western Education Office's{" "}
+              <b>Information Gifted education</b>.
             </Contents>
-            <Contents>Year 2019, Joined Dev8, Web Programming Club</Contents>
+            <Contents>
+              Year 2019, Joined <b>Dev8</b>, Web Programming Club
+            </Contents>
             <Content>Year 2019, Joined HMH, Big data Research Club</Content>
 
             <Title>Tech Ability</Title>
