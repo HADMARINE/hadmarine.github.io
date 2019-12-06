@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     display:flex;
     vertical-align: middle;
     justify-content:center;
-
+    flex-wrap: nowrap;
 
     img{
         width: 50px;
@@ -26,7 +26,12 @@ const GlobalStyle = createGlobalStyle`
 export default class SocialLinks extends Component {
   render() {
     return (
-      <div className="Animation-PageUpOpacity Animation-PageUpSpacing">
+      <div
+        className={
+          "Animation-PageUpOpacity" +
+          (window.innerWidth > 1000 ? " Animation-PageUpSpacing" : "")
+        }
+      >
         <GlobalStyle />
         <a
           href="http://git.hadmarine.com"
@@ -49,7 +54,7 @@ export default class SocialLinks extends Component {
         >
           <img src={Kakaotalk} alt="Kakaotalk logo" />
         </a>
-        {window.innerWidth > 550 ? <></> : <br />}
+        {window.innerWidth > 850 ? <></> : <br />}
         <a
           href="https://t.me/HADMARINE"
           rel="noopener noreferrer"
