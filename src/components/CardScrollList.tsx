@@ -4,8 +4,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  overflow-x: auto;
 `;
 
 export default class ProductList extends Component<any> {
@@ -14,14 +13,9 @@ export default class ProductList extends Component<any> {
   };
 
   render() {
-    const data = JSON.parse(this.props.data);
+    const data: any = JSON.parse(this.props.data);
     const list: React.ReactNode = data.map((info: any) => (
-      <CardScroll
-        key={info.id}
-        title={info.title}
-        img={info.img}
-        content={info.content}
-      />
+      <CardScroll title={info.title} img={info.img} content={info.content} />
     ));
     return <Wrapper>{list}</Wrapper>;
   }
