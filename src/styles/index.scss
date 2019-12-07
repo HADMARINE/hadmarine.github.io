@@ -61,6 +61,9 @@ a {
   &-xxlarge {
     padding-top: 70vh;
   }
+  &-xxxlarge {
+    padding-top: 120vh;
+  }
 }
 
 .Text {
@@ -84,6 +87,7 @@ a {
   &-xxlarge {
     font-size: calc(6.5rem + 4vw);
   }
+
   &-bold {
     font-weight: 900;
   }
