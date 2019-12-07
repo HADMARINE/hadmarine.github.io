@@ -13,6 +13,7 @@ import SocialLinks from "../components/SocialLinks";
 import Header from "../components/Header";
 import Profile from "../components/Profile";
 import CardScroll from "../components/CardScroll";
+import Portfolio from "../components/Portfolio";
 
 //IMAGE
 import backImg from "../image/back.png";
@@ -33,7 +34,7 @@ export default class MainPage extends Component {
         </Headroom>
         <div className="Style-center">
           <BackPhoto src={backImg} margin={0} />
-          <BackPhoto src={profileImg} margin={160} />
+          <BackPhoto src={profileImg} margin={130} />
 
           {/* <IntroductPhotoSection /> */}
           <p className="Text-xlarge Text-bold" style={{ marginTop: "10rem" }}>
@@ -42,11 +43,10 @@ export default class MainPage extends Component {
           <p className="Text-small">Self-directing Full-stack Developer</p>
           <div className="Blank-medium" />
           <SocialLinks />
-          <div className="Blank-medium" />
           <div className="Blank-large" />
           <Profile />
-          <div className="Blank-large" />
-          <CardScroll />
+          <div className="Blank-xxxlarge" />
+          <Portfolio />
         </div>
       </div>
     );
