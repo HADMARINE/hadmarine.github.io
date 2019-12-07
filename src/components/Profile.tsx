@@ -73,13 +73,19 @@ export default class Profile extends Component {
             <Title>Tech Ability</Title>
             <Content>
               React, Typescript, Javascript, Node.js, Express, MongoDB,
-              MariaDB(MySQL), HTML, SCSS, CSS, TailWindCSS, Python, C#, Data
-              Analyzing, Ubuntu, And considerable Design ability.
+              MariaDB(MySQL), HTML, SCSS (CSS), Python, C#, Data Analyzing,
+              Ubuntu
             </Content>
 
             <Title>Open Source Projects In Participation</Title>
             <Content>
-              <a href="https://github.com/WebBoilerplates">WebBoilerplates</a>
+              <a
+                href="https://github.com/WebBoilerplates"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                WebBoilerplates
+              </a>
             </Content>
           </div>
         </Wrapper>
