@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
+//MODULES
 import Headroom from "react-headroom";
 
 //STYLESHEET
@@ -14,10 +15,12 @@ import Header from "../components/Header";
 import Profile from "../components/Profile";
 import CardScroll from "../components/CardScroll";
 import Portfolio from "../components/Portfolio";
+import Contact from "../components/Contact";
 
 //IMAGE
 import backImg from "../image/back.png";
 import profileImg from "../image/profile.png";
+import portfolio_back from "../image/portfolio_back.png";
 
 //STYLED-COMPONENTS
 const GlobalStyle = createGlobalStyle`
@@ -29,14 +32,29 @@ export default class MainPage extends Component {
     return (
       <div>
         <GlobalStyle />
-        <Headroom>
-          <Header />
-        </Headroom>
-        <div className="Style-center">
-          <BackPhoto src={backImg} margin={0} />
-          <BackPhoto src={profileImg} margin={130} />
+        {window.innerWidth < 500 ? (
+          <></>
+        ) : (
+          <Headroom>
+            <Header />
+          </Headroom>
+        )}
 
-          {/* <IntroductPhotoSection /> */}
+        <div className="Style-center">
+          {window.innerWidth < 500 ? (
+            <>
+              <BackPhoto src={backImg} margin={0} />
+              <BackPhoto src={profileImg} margin={130} />
+              <BackPhoto src={portfolio_back} margin={235} />
+            </>
+          ) : (
+            <>
+              <BackPhoto src={backImg} margin={0} />
+              <BackPhoto src={profileImg} margin={140} />
+              <BackPhoto src={portfolio_back} margin={250} />
+            </>
+          )}
+
           <p className="Text-xlarge Text-bold" style={{ marginTop: "10rem" }}>
             HADMARINE
           </p>
@@ -44,9 +62,18 @@ export default class MainPage extends Component {
           <div className="Blank-medium" />
           <SocialLinks />
           <div className="Blank-large" />
+          <span id="profile" />
           <Profile />
-          <div className="Blank-xxxlarge" />
+          <div className="Blank-medium" />
+          <span id="portfolio" />
+          {window.innerWidth < 500 ? <div className="Blank-small" /> : <></>}
           <Portfolio />
+          <div className="Blank-large" />
+          <span id="contact" />
+          <Contact />
+          {window.innerWidth < 500 ? <div className="Blank-large" /> : <></>}
+          <div className="Blank-xlarge" />
+          <p className="Text-large Text-bold">Waiting for you</p>
         </div>
       </div>
     );
