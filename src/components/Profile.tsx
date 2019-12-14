@@ -44,7 +44,13 @@ export default class Profile extends Component {
         <p className="Text-large Text-bold">Profile</p>
         <div className="Blank-xsmall" />
         <Wrapper>
-          <div style={{ width: "60vw", textAlign: "left" }}>
+          <div
+            style={
+              window.innerWidth > 500
+                ? { width: "60vw", textAlign: "left" }
+                : { width: "90vw", textAlign: "left" }
+            }
+          >
             <Title>Name</Title>
             <Content>Hojoon Lee, a.k.a HADMARINE</Content>
 
@@ -66,7 +72,17 @@ export default class Profile extends Component {
               <b>Information Gifted education</b>.
             </Contents>
             <Contents>
-              Year 2019, Joined <b>Dev8</b>, Web Programming Club
+              Year 2019, Joined{" "}
+              <b>
+                <a
+                  href="https://dev8.co"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Dev8
+                </a>
+              </b>
+              , Web Programming Club
             </Contents>
             <Content>Year 2019, Joined HMH, Big data Research Club</Content>
 
