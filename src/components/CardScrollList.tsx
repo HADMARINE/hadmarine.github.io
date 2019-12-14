@@ -5,6 +5,10 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   overflow-x: auto;
+  flex-wrap: nowrap;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export default class ProductList extends Component<any> {
