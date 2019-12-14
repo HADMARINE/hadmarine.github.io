@@ -6,7 +6,7 @@ import "../styles/index.scss";
 let Wrapper = styled.div`
   text-align: left;
   align-items: center;
-  height: 35rem;
+  height: 40rem;
   width: 535px;
   background-color: rgb(40, 40, 40);
   border-radius: 5px;
@@ -29,7 +29,7 @@ let Wrapper = styled.div`
 const MobileWrapper = styled.div`
   text-align: left;
   align-items: center;
-  height: 35rem;
+  height: 40rem;
   width: 350px;
   background-color: rgb(40, 40, 40);
   border-radius: 5px;
