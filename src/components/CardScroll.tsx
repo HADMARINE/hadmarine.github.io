@@ -1,39 +1,52 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Jumbotron } from "react-bootstrap";
 
 import "../styles/index.scss";
 
-const Wrapper = styled.div`
+let Wrapper = styled.div`
   text-align: left;
-  /* height: 50rem; */
-  width: 50rem;
+  align-items: center;
+  height: 35rem;
+  width: 535px;
   background-color: rgb(40, 40, 40);
   border-radius: 5px;
-  /* flex: 0 0 auto; */
+  flex: 0 0 auto;
   margin-left: calc(1rem + 3px);
   overflow: hidden;
-  /* display: flex; */
+
   img {
     border-radius: 5px;
-    height: 400px;
-    max-width: 200%;
-    width: calc(100vh - 30rem);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* max-width: 100%; */
-    height: auto;
+    width: 100%;
+    height: 300px;
+    object-fit: scale-down;
+    margin: 0;
   }
-  div {
-    color: whitesmoke;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    position: relative;
-    padding-top: 200%; /* 1:1 ratio */
-    overflow: hidden;
+  p {
+    margin: 1rem;
+  }
+`;
+
+const MobileWrapper = styled.div`
+  text-align: left;
+  align-items: center;
+  height: 35rem;
+  width: 350px;
+  background-color: rgb(40, 40, 40);
+  border-radius: 5px;
+  flex: 0 0 auto;
+  margin-left: calc(1rem + 3px);
+  overflow: hidden;
+
+  img {
+    border-radius: 5px;
+    width: 100%;
+    height: 300px;
+    object-fit: scale-down;
+    margin: 0;
+    margin-top: -2rem;
+  }
+  p {
+    margin: 1rem;
   }
 `;
 
@@ -60,6 +73,9 @@ export default class Product extends Component<any> {
   };
   handleOpenLink = () => {};
   render() {
+    if (window.innerWidth < 500) {
+      Wrapper = MobileWrapper;
+    }
     return (
       <Wrapper>
         <div style={{ margin: "-15px" }}>
