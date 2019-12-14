@@ -1,38 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import CardScrollList from "../components/CardScrollList";
-
-import TestImg from "../image/typescript.jpeg";
+import { data } from "../data/portfolioData";
 
 import "../styles/index.scss";
-
-const data: any = [
-  {
-    title: "test",
-    content: "test",
-    img: TestImg
-  },
-  {
-    title: "test",
-    content: "test",
-    img: TestImg
-  },
-  {
-    title: "test",
-    content: "test",
-    img: TestImg
-  },
-  {
-    title: "test",
-    content: "test",
-    img: TestImg
-  },
-  {
-    title: "test",
-    content: "test",
-    img: TestImg
-  }
-];
 
 const Title = styled.p`
   font-size: calc(2rem + 1.5vw);
@@ -41,6 +12,7 @@ const Title = styled.p`
 
 export default class Portfolio extends Component {
   render() {
+    console.log(data);
     return (
       <div>
         <Title>Portfolio</Title>
