@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8a41f6fa5e99f0a0341be34516b8b715",
+    "revision": "5ca1a5f9c501fb1a0419e7cf565c3775",
     "url": "/index.html"
   },
   {
-    "revision": "f5fafca6535691e13cb1",
+    "revision": "4465ea8feafe75b55e93",
     "url": "/static/css/main.f65cb018.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.b8db17fd.chunk.js"
   },
   {
-    "revision": "f5fafca6535691e13cb1",
-    "url": "/static/js/main.8401cc68.chunk.js"
+    "revision": "4465ea8feafe75b55e93",
+    "url": "/static/js/main.bcbb63c8.chunk.js"
   },
   {
     "revision": "45f22f47dbc471efe066",
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/marktwo.9ba80779.png"
   },
   {
-    "revision": "ff897644a62e0003c2decabfd77196c3",
-    "url": "/static/media/portfolio_back.ff897644.png"
+    "revision": "45d9ebffbed6b299e0b515198f8c0d0e",
+    "url": "/static/media/portfolio_back.45d9ebff.png"
   },
   {
     "revision": "a546febd20df2a6f164797033f683147",
