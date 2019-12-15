@@ -72,7 +72,7 @@ export default class MainPage extends Component {
           <span id="contact" />
           <Contact />
           {window.innerWidth < 500 ? <div className="Blank-large" /> : <></>}
-          <div className="Blank-xlarge" />
+          <div className="Blank-large" />
           <p className="Text-large Text-bold">Waiting for you</p>
         </div>
       </div>
