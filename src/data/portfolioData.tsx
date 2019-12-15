@@ -8,7 +8,7 @@ export const data: any = [
   {
     title: "Sunrin Pay",
     content:
-      'Sunrin Pay is FinTech Service using JsonWebToken. It was Developed at "Data Communication" class with Doyeong Kim. I developed "Store transaction". We are preparing this service to launch in 2020 Sunrin Festival, So follow up the updates via Github or Facebook.',
+      'Sunrin Pay is FinTech Service using JsonWebToken. It was Developed at "Data Communication" class with Doyeong Kim. I developed "Store transaction". We are preparing this service to launch at 2020 Sunrin Festival, So follow up the updates via Github or Facebook.',
     img: sunrinpay
   },
   {
