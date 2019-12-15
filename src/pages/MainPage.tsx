@@ -45,13 +45,11 @@ export default class MainPage extends Component {
             <>
               <BackPhoto src={backImg} margin={0} />
               <BackPhoto src={profileImg} margin={130} />
-              <BackPhoto src={portfolio_back} margin={235} />
             </>
           ) : (
             <>
               <BackPhoto src={backImg} margin={0} />
               <BackPhoto src={profileImg} margin={140} />
-              <BackPhoto src={portfolio_back} margin={250} />
             </>
           )}
 
@@ -71,7 +69,7 @@ export default class MainPage extends Component {
           <div className="Blank-large" />
           <span id="contact" />
           <Contact />
-          {window.innerWidth < 500 ? <div className="Blank-large" /> : <></>}
+          <div className="Blank-medium" />
         </div>
       </div>
     );

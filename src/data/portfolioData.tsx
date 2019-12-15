@@ -20,7 +20,7 @@ export const data: any = [
   {
     title: "Space",
     content:
-      'Space is a solution of the "Sharing Economy". You can share almost anything with this service. This project was carried out because of "Digital Contents Developing Contest". I worked hard with four teammates, and I worked for Back-end Engineer.',
+      'Space is a solution of the "Sharing Economy". You can share almost anything with this service. This project was carried out because of "Digital Contents Developing Contest". I worked hard with four teammates, and I was in charge of Back-end Engineer.',
     img: space
   }
 ];
