@@ -1,5 +1,3 @@
-import React from "react";
-
 import sunrinpay from "../image/sunrinpay.png";
 import marktwo from "../image/marktwo.png";
 import space from "../image/space.png";
