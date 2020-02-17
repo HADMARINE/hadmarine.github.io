@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Markdown from "react-markdown";
 
 import "../styles/index.scss";
 
@@ -82,7 +83,7 @@ export default class Product extends Component<any> {
           <img src={this.props.img} alt={this.props.title} />
         </div>
         <Title>{this.props.title}</Title>
-        <Content>{this.props.content}</Content>
+        <Markdown source={this.props.content} />
       </Wrapper>
     );
   }
