@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import dotenv from 'dotenv';
+
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import reportWebVitals from '@src/reportWebVitals';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import withProvider from '@util/withProvider';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+export const RootComponent = (
+  <React.StrictMode>{withProvider(<App />)}</React.StrictMode>
+);
+
+function Root(): void {
+  dotenv.config();
+
+  ReactDOM.render(RootComponent, document.getElementById('root'));
+
+  reportWebVitals();
+}
+
+export default Root();
