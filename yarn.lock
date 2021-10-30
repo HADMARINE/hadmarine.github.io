@@ -9372,6 +9372,7 @@ fsevents@^1.2.7:
     react-router: ^5.2.1
     react-router-dom: ^5.3.0
     react-scripts: ^4.0.3
+    react-scroll-parallax: ^2.4.0
     react-test-renderer: ^17.0.2
     require-strip-json-comments: ^2.0.0
     styled-components: ^5.3.3
@@ -14532,7 +14533,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.5.10, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -14998,6 +14999,18 @@ fsevents@^1.2.7:
   bin:
     react-scripts: ./bin/react-scripts.js
   checksum: a05a46ce3145b42ac8b57633d3b90b6689c24697c1449bccf219349996d718a3cd0796e4910f4ab6abb5b024982cafd62345e88c8e7b42a45efca3bef1a0eb87
+  languageName: node
+  linkType: hard
+
+"react-scroll-parallax@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "react-scroll-parallax@npm:2.4.0"
+  dependencies:
+    prop-types: ^15.5.10
+  peerDependencies:
+    react: ^16.3.0-0 || >=17.0.1
+    react-dom: ^16.3.0-0 || >=17.0.1
+  checksum: 20ffee77f686b1342707c8970d8388fc48e3f7f138f5fc6e117478a0c03e4ca269d9a152956193d06c460f91c679ff5399f8d29855f3cb0db0e0820a34bcce24
   languageName: node
   linkType: hard
 
