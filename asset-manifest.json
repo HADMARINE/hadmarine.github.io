@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/hadmarine.github.io/static/css/main.a2f7dd44.chunk.css",
-    "main.js": "/hadmarine.github.io/static/js/main.cd47ee54.chunk.js",
-    "runtime-main.js": "/hadmarine.github.io/static/js/runtime-main.b494fa9c.js",
-    "static/js/2.a4a2bdef.chunk.js": "/hadmarine.github.io/static/js/2.a4a2bdef.chunk.js",
-    "static/js/3.fe8b02cf.chunk.js": "/hadmarine.github.io/static/js/3.fe8b02cf.chunk.js",
-    "index.html": "/hadmarine.github.io/index.html",
-    "static/js/2.a4a2bdef.chunk.js.LICENSE.txt": "/hadmarine.github.io/static/js/2.a4a2bdef.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.a2f7dd44.chunk.css",
+    "main.js": "/static/js/main.cd47ee54.chunk.js",
+    "runtime-main.js": "/static/js/runtime-main.f577172b.js",
+    "static/js/2.0d5ba0ec.chunk.js": "/static/js/2.0d5ba0ec.chunk.js",
+    "static/js/3.fe8b02cf.chunk.js": "/static/js/3.fe8b02cf.chunk.js",
+    "index.html": "/index.html",
+    "static/js/2.0d5ba0ec.chunk.js.LICENSE.txt": "/static/js/2.0d5ba0ec.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b494fa9c.js",
-    "static/js/2.a4a2bdef.chunk.js",
+    "static/js/runtime-main.f577172b.js",
+    "static/js/2.0d5ba0ec.chunk.js",
     "static/css/main.a2f7dd44.chunk.css",
     "static/js/main.cd47ee54.chunk.js"
   ]
