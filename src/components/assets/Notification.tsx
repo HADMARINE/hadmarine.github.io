@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import queryString from 'query-string';
 import DismissButtonImage from '@img/icon/DismissButton.png';
 import Img from '@components/assets/Img';
 import Button from '@components/assets/Button';
@@ -67,67 +66,6 @@ const Notification = (props: Props) => {
   );
 };
 
-export const PrefixQueryNotification = (
-  props: Record<string, unknown>,
-): JSX.Element => {
-  const query = queryString.parse(window.location.search);
-  switch (
-    query.redirectType //TODO : check this by json config file
-  ) {
-    case 'tokenExpired':
-      return <Notification>토큰이 만료되었습니다.</Notification>;
-    case 'tokenInvalid':
-      return <Notification>사용자 인증에 실패했습니다.</Notification>;
-    case 'logout':
-      return <Notification>로그아웃 되었습니다.</Notification>;
-    case 'noSession':
-      return <Notification>로그인이 필요합니다.</Notification>;
-    case 'registerSuccess':
-      return <Notification>회원가입에 성공했습니다.</Notification>;
-    case 'emailVerifySuccess':
-      return <Notification>이메일 인증에 성공했습니다.</Notification>;
-    default:
-      if (!query.redirectType) return <></>;
-      return (
-        <Notification>
-          알 수 없는 에러가 발생했습니다. <br />
-          Error code : {query.redirectType}
-        </Notification>
-      );
-  }
-};
-
-export const PrefixPropsNotification = (props: {
-  error?: string;
-}): JSX.Element => {
-  switch (
-    props.error // TODO : check this by json config file
-  ) {
-    case 'tokenExpired':
-      return <Notification>토큰이 만료되었습니다.</Notification>;
-    case 'tokenInvalid':
-      return <Notification>사용자 인증에 실패했습니다.</Notification>;
-    case 'logout':
-      return <Notification>로그아웃 되었습니다.</Notification>;
-    case 'noSession':
-      return <Notification>로그인이 필요합니다.</Notification>;
-    case 'registerSuccess':
-      return <Notification>회원가입에 성공했습니다.</Notification>;
-    case 'emailVerifySuccess':
-      return <Notification>이메일 인증에 성공했습니다.</Notification>;
-    default:
-      if (!props.error) return <></>;
-      return (
-        <Notification>
-          알 수 없는 에러가 발생했습니다. <br />
-          Error code : {props.error}
-        </Notification>
-      );
-  }
-};
-
 export default {
   default: Notification,
-  prefixQuery: PrefixQueryNotification,
-  prefixProps: PrefixPropsNotification,
 };
