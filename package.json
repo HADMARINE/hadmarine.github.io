@@ -1,6 +1,6 @@
 {
   "name": "hadmarine-frontend",
-  "version": "4.0.0",
+  "version": "3.0.0",
   "main": "index.tsx",
   "author": "HADMARINE <contact@hadmarine.com>",
   "license": "2021 (C) HADMARINE",
