@@ -9505,6 +9505,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.2
     react-is: ^17.0.2
     react-modal: ^3.14.3
+    react-parallax: ^3.3.0
     react-router: ^5.2.1
     react-router-dom: ^5.3.0
     react-scripts: ^4.0.3
@@ -15084,6 +15085,16 @@ fsevents@^1.2.7:
     react: ^0.14.0 || ^15.0.0 || ^16 || ^17
     react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17
   checksum: 025605ad33c6eb743522d9e3f935bb7b1aef6b5b54dea3daa63c8599266c00d16993839c8d3f4bfcc959595e1391b78c0786e2579e272c165fe8057d5c1cebe4
+  languageName: node
+  linkType: hard
+
+"react-parallax@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "react-parallax@npm:3.3.0"
+  peerDependencies:
+    react: 16.x.x || 17.x.x
+    react-dom: 16.x.x || 17.x.x
+  checksum: a345216b136b6f30c765aab75e985eb8d6a33c6f4a4dd311c661741f55faa24558b6a303e4d63c3fe04dee1993aa9beced8818fab49aad902a46eb4fff5db318
   languageName: node
   linkType: hard
 
