@@ -19,6 +19,7 @@ interface TextProps {
   height?: string;
   style?: React.CSSProperties;
   fitParent?: boolean;
+  letterSpacing?: string;
 }
 // Styles + Components
 
@@ -109,6 +110,7 @@ export const Text = (props: TextProps) => {
     alignItems: props.textAlign,
     display: 'flex',
     textDecoration: 'none',
+    letterSpacing: props.letterSpacing || undefined,
   };
 
   if (props.fitParent) {

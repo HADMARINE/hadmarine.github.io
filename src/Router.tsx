@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Example from '@pages/Example';
 import PageNotFound from '@pages/PageNotFound';
+import Main from './pages/Main';
 
 const ClientRouter = (
   <>
     <Router>
       <Switch>
-        <Route exact path="/" component={Example} />
+        <Route exact path="/" component={Main} />
         <Route component={PageNotFound} />
       </Switch>
     </Router>
