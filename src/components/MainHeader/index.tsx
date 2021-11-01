@@ -19,9 +19,12 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 99999;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 const MainHeader = (props: Props) => {
+  const [index, setIndex] = React.useState(0);
+
   return (
     <Wrapper>
       <Flex horizontal center>
@@ -32,7 +35,11 @@ const MainHeader = (props: Props) => {
         <Margin horizontal={'5px'} />
         <Img src={tgLogo} width={'45px'} style={{ marginTop: '-5px' }} />
         <FlexSpacer flex={1} />
-        <HeaderSelector data={['Portfolio', 'Contact', 'Blog']} index={0} />
+        <HeaderSelector
+          data={['Portfolio', 'Contact', 'Blog']}
+          index={index}
+          setIndex={setIndex}
+        />
       </Flex>
     </Wrapper>
   );

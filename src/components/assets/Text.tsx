@@ -2,7 +2,11 @@ import styled, { StyledComponent } from 'styled-components';
 import React from 'react';
 
 // Interface & types
-type StyledComponentType = StyledComponent<any, any, Record<string, any>>;
+export type StyledComponentType = StyledComponent<
+  any,
+  any,
+  Record<string, any>
+>;
 
 interface BoldType {
   color: StyledComponentType;
