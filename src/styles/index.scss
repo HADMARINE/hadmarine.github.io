@@ -2,11 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;800;900&display=swap');
 
 * {
-  font-family: 'Noto Sans', serif;
+  font-family: 'Urbanist', serif;
 }
 
 body {
   background-color: white;
   color: black;
   margin: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #92b4f2;
+  // &:hover {
+  //   text-decoration: none;
+  //   color: white;
+  // }
 }
