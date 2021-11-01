@@ -111,6 +111,7 @@ export const Text = (props: TextProps) => {
     display: 'flex',
     textDecoration: 'none',
     letterSpacing: props.letterSpacing || undefined,
+    flexDirection: 'column',
   };
 
   if (props.fitParent) {
