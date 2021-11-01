@@ -29,7 +29,7 @@ module.exports = {
     '@typescript-eslint/unified-signatures': 'error',
     '@typescript-eslint/explicit-module-boundary-types': ['off'],
     'no-use-before-define': 'off',
-    camelcase: 'error',
+    camelcase: 'warn',
     complexity: 'off',
     'constructor-super': 'error',
     'dot-notation': 'error',
