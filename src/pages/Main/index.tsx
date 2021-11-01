@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { observer, inject } from 'mobx-react';
@@ -9,7 +8,8 @@ import { Flex } from '@src/components/assets/Wrapper';
 import Img from '@src/components/assets/Img';
 import h_logo_key from '../../assets/img/hadmarine_logo_key.png';
 
-import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { Parallax } from 'react-parallax';
 
 const Wrapper = styled.div`
   display: flex;
@@ -28,44 +28,159 @@ interface Props {}
 export default class Main extends Component<Props> {
   render() {
     return (
-      <ParallaxProvider>
-        <Wrapper>
-          <MainHeader />
-          <Margin vertical={'20vh'} />
-          <Text
-            fontFamily={'Urbanist'}
-            style={{
-              color: '#2d5473',
-            }}>
-            <Flex vertical>
-              <Parallax y={[-400, 200]}>
-                <Text
-                  fontFamily={'Urbanist'}
-                  fontSize={'90px'}
-                  fontWeight={900}
-                  style={{ letterSpacing: '7px' }}>
-                  hadmarine
-                </Text>
-              </Parallax>
-              <Parallax y={[250, -100]}>
-                <Text
-                  fontFamily={'Urbanist'}
-                  fontSize={'32px'}
-                  fontWeight={900}
-                  style={{ marginTop: '-20px' }}>
-                  Full stack developer
-                </Text>
-              </Parallax>
+      // <ParallaxProvider>
+      <Wrapper>
+        <MainHeader />
+        <Parallax
+          renderLayer={(percentage) => (
+            <Margin vertical={`${20 * percentage}vh`} />
+          )}
+        />
+        <Text
+          fontFamily={'Urbanist'}
+          style={{
+            color: '#2d5473',
+          }}>
+          <Flex vertical>
+            <Text
+              fontFamily={'Urbanist'}
+              fontSize={'90px'}
+              fontWeight={900}
+              style={{ letterSpacing: `7px` }}>
+              hadmarine
+            </Text>
+            <Parallax
+              renderLayer={(percentage) => (
+                <Margin vertical={`${40 * percentage - 25}vh`} />
+              )}
+            />
+            <Text
+              fontFamily={'Urbanist'}
+              fontSize={'32px'}
+              fontWeight={900}
+              style={{ marginTop: '-20px' }}>
+              Full stack developer
+            </Text>
+            <Parallax
+              renderLayer={(percentage) => (
+                <>
+                  <Margin
+                    vertical={`${
+                      100 * (percentage >= 1 ? 1 : percentage) - 60
+                    }vh`}
+                  />
+                  <Img
+                    src={h_logo_key}
+                    width={'400px'}
+                    style={{
+                      opacity: 1 - 2.5 * (percentage - 0.7),
+                    }}
+                  />
+                </>
+              )}
+            />
+            {/* <Parallax
+              renderLayer={(percentage) => (
+                <Img
+                  src={h_logo_key}
+                  width={'400px'}
+                  style={{
+                    opacity: 1 - 2.5 * (percentage - 0.7),
+                  }}
+                />
+              )}
+            /> */}
 
-              {/* <Margin vertical={'10vh'} /> */}
-              <Parallax y={[-200, 200]}>
-                <Img src={h_logo_key} width={'400px'} />
-              </Parallax>
+            <Parallax
+              renderLayer={(percentage) => (
+                <Margin
+                  vertical={`${
+                    -60 * (percentage - 0.1 >= 1 ? 1 : percentage - 0.1) + 50
+                  }vh`}
+                />
+              )}
+            />
+            <Parallax
+              renderLayer={(percentage) =>
+                percentage < 1 ? (
+                  <Flex
+                    width={'100vw'}
+                    height={`${
+                      -60 * (percentage >= 1 ? 1 : percentage) + 60
+                    }vh`}
+                    style={{
+                      backgroundColor: '#C7D5DD',
+                    }}
+                  />
+                ) : undefined
+              }
+            />
+            <Parallax
+              renderLayer={(percentage) =>
+                percentage < 1 ? (
+                  <Flex
+                    width={'100vw'}
+                    height={`${
+                      -60 * (percentage >= 1 ? 1 : percentage) + 60
+                    }vh`}
+                    style={{
+                      backgroundColor: '#91aabb',
+                    }}
+                  />
+                ) : undefined
+              }
+            />
+            <Flex
+              vertical
+              width={'100vw'}
+              style={{
+                backgroundColor: '#2D5473',
+                color: 'white',
+              }}>
+              <Margin vertical={'10vh'} />
+              {/* <Parallax
+                renderLayer={(percentage) => (
+                  <Margin
+                    vertical={`${
+                      90 * (percentage - 0.2 >= 1 ? 1 : percentage - 0.2)
+                    }vh`}
+                  />
+                )}
+              /> */}
+              <Parallax
+                renderLayer={(percentage) => (
+                  <Text
+                    fontFamily={'Urbanist'}
+                    fontWeight={900}
+                    fontSize={'70px'}
+                    letterSpacing={'1.5px'}
+                    style={{
+                      opacity: percentage,
+                      marginTop: `${
+                        (percentage > 0.5 ? 0.5 : percentage) * 70
+                      }vh`,
+                    }}>
+                    Projects
+                  </Text>
+                )}
+              />
+
               <Margin vertical={'200vh'} />
+              <Flex vertical center width={'100vw'}>
+                <Text fontFamily={'Urbanist'} textAlign={'center'}>
+                  Copyright 2021 hadmarine
+                  <br />
+                  <span>
+                    All design and interactions was developed by{' '}
+                    <a href={'http://git.hadmarine.com'}>hadmarine</a>
+                  </span>
+                </Text>
+              </Flex>
             </Flex>
-          </Text>
-        </Wrapper>
-      </ParallaxProvider>
+          </Flex>
+        </Text>
+      </Wrapper>
+      // </ParallaxProvider>
     );
   }
 }
