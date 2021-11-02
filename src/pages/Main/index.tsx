@@ -7,8 +7,6 @@ import { Margin } from '@src/components/assets/Format';
 import { Flex } from '@src/components/assets/Wrapper';
 import Img from '@src/components/assets/Img';
 import h_logo_key from '../../assets/img/hadmarine_logo_key.png';
-
-import { ParallaxProvider } from 'react-scroll-parallax';
 import { Parallax } from 'react-parallax';
 
 const Wrapper = styled.div`
@@ -28,7 +26,6 @@ interface Props {}
 export default class Main extends Component<Props> {
   render() {
     return (
-      // <ParallaxProvider>
       <Wrapper>
         <MainHeader />
         <Parallax
@@ -126,15 +123,6 @@ export default class Main extends Component<Props> {
                 color: 'white',
               }}>
               <Margin vertical={'10vh'} />
-              {/* <Parallax
-                renderLayer={(percentage) => (
-                  <Margin
-                    vertical={`${
-                      90 * (percentage - 0.2 >= 1 ? 1 : percentage - 0.2)
-                    }vh`}
-                  />
-                )}
-              /> */}
               <Parallax
                 renderLayer={(percentage) => (
                   <Text
@@ -168,7 +156,6 @@ export default class Main extends Component<Props> {
           </Flex>
         </Text>
       </Wrapper>
-      // </ParallaxProvider>
     );
   }
 }
