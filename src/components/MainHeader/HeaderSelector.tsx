@@ -33,8 +33,7 @@ const HeaderSelector = (props: Props) => {
               style={{
                 display: 'flex',
                 flex: 1,
-                zIndex: props.index === i ? -1 : 1,
-                // zIndex: 1,
+                // zIndex: props.index === i ? -1 : 1,
               }}
               width={'undef'}
               variant={'transparent'}

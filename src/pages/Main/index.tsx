@@ -79,23 +79,11 @@ export default class Main extends Component<Props> {
                 </>
               )}
             />
-            {/* <Parallax
-              renderLayer={(percentage) => (
-                <Img
-                  src={h_logo_key}
-                  width={'400px'}
-                  style={{
-                    opacity: 1 - 2.5 * (percentage - 0.7),
-                  }}
-                />
-              )}
-            /> */}
-
             <Parallax
               renderLayer={(percentage) => (
                 <Margin
                   vertical={`${
-                    -60 * (percentage - 0.1 >= 1 ? 1 : percentage - 0.1) + 50
+                    -60 * (percentage - 0.1 >= 1 ? 1 : percentage - 0.1) + 30
                   }vh`}
                 />
               )}

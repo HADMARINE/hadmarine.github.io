@@ -29,7 +29,13 @@ const MainHeader = (props: Props) => {
     <Wrapper>
       <Flex horizontal center>
         <Margin horizontal={'20px'} />
-        <Img src={hadmarineLogo} width={'70px'} style={{ marginTop: '3px' }} />
+        <a href={'https://hadmarine.gitub.io'}>
+          <Img
+            src={hadmarineLogo}
+            width={'70px'}
+            style={{ marginTop: '3px' }}
+          />
+        </a>
         <FlexSpacer flex={1} />
         <Img src={githubLogo} width={'45px'} style={{ marginTop: '-5px' }} />
         <Margin horizontal={'5px'} />
