@@ -3,6 +3,11 @@
 
 * {
   font-family: 'Urbanist', serif;
+  &::selection {
+    background: #2d5373dc;
+    color: #fff;
+    text-shadow: none;
+  }
 }
 
 body {
