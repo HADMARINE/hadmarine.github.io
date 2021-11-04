@@ -10,6 +10,7 @@ import hLogoKey from '../../assets/img/hadmarine_logo_key.png';
 import { Parallax } from 'react-parallax';
 import Timeline from './Timeline';
 import TimelineYearIndicator from './TimelineYearIndicator';
+import TimelineTitle from './TimelineTitle';
 
 const Wrapper = styled.div`
   display: flex;
@@ -217,8 +218,15 @@ const Main = (props: Props) => {
               }}
             />
             <Timeline animationState={subtitleAnimationState} />
-            <Flex style={{ width: '100vw', marginTop: '400px' }}>
+            <Flex
+              vertical
+              style={{
+                width: '100vw',
+                marginTop: '400px',
+                alignItems: 'flex-start',
+              }}>
               <TimelineYearIndicator>2021</TimelineYearIndicator>
+              <TimelineTitle>d</TimelineTitle>
             </Flex>
 
             <Margin vertical={'800vh'} />
