@@ -29,7 +29,13 @@ const MainHeader = (props: Props) => {
     <Wrapper>
       <Flex horizontal center>
         <Margin horizontal={'20px'} />
-        <a href={'https://hadmarine.gitub.io'}>
+
+        <a
+          href={
+            window.location.hostname === 'hadmarine.github.io'
+              ? 'https://hadmarine.github.io'
+              : 'https://www.hadmarine.com'
+          }>
           <Img
             src={hadmarineLogo}
             width={'70px'}
@@ -37,9 +43,17 @@ const MainHeader = (props: Props) => {
           />
         </a>
         <FlexSpacer flex={1} />
-        <Img src={githubLogo} width={'45px'} style={{ marginTop: '-5px' }} />
+
+        <a
+          href={'https://github.com/hadmarine'}
+          target={'_blank'}
+          rel={'noreferrer'}>
+          <Img src={githubLogo} width={'45px'} style={{ marginTop: '-5px' }} />
+        </a>
         <Margin horizontal={'5px'} />
-        <Img src={tgLogo} width={'45px'} style={{ marginTop: '-5px' }} />
+        <a href={'https://t.me/HADMARINE'} target={'_blank'} rel={'noreferrer'}>
+          <Img src={tgLogo} width={'45px'} style={{ marginTop: '-5px' }} />
+        </a>
         <FlexSpacer flex={1} />
         <HeaderSelector
           data={['Portfolio', 'Contact', 'Blog']}
