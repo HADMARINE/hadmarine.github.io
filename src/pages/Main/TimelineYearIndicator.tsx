@@ -19,6 +19,7 @@ const Wrapper = styled.div`
   align-items: center;
   display: flex;
   padding-right: 10px;
+  margin-top: 20px;
 `;
 
 const TimelineYearIndicator = (props: Props) => {

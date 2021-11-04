@@ -114,6 +114,7 @@ const HeaderActive = (props: Props) => {
         style={{
           transform: 'rotateY(180deg)',
           zIndex: -1,
+          marginLeft: '-1px',
         }}
       />
     </Wrapper>

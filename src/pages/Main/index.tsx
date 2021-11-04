@@ -226,7 +226,10 @@ const Main = (props: Props) => {
                 alignItems: 'flex-start',
               }}>
               <TimelineYearIndicator>2021</TimelineYearIndicator>
-              <TimelineTitle>d</TimelineTitle>
+              <TimelineTitle
+                title={'Sunrinthon Website Development'}
+                subtitle={'Official school compectition project'}
+              />
             </Flex>
 
             <Margin vertical={'800vh'} />
