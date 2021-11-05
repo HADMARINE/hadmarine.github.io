@@ -13,8 +13,8 @@ const Wrapper = styled.div`
   background-color: white;
   color: #2d5473;
   font-size: 24px;
-  font-weight: 600;
-  text-shadow: 1px 1px 2px #00000050;
+  font-weight: 500;
+  /* text-shadow: 1px 1px 2px #00000050; */
   width: calc(100% - ${MARGIN_VALUE});
   padding-left: 20px;
   padding-right: 10px;

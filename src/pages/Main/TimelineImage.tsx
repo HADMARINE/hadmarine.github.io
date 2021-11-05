@@ -15,12 +15,10 @@ const Wrapper = styled.img`
   font-size: 36px;
   font-weight: bold;
   text-shadow: 1px 1px 2px #00000070;
-  width: calc(100% - ${MARGIN_VALUE});
-  padding-left: 20px;
+  width: calc(100% - ${MARGIN_VALUE} + 30px);
   justify-content: flex-end;
   align-items: center;
   display: flex;
-  padding-right: 10px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -28,6 +26,7 @@ const Wrapper = styled.img`
   align-items: flex-start;
   text-align: left;
   margin-left: ${MARGIN_VALUE};
+  object-fit: contain;
 `;
 
 const TimelineImage = (props: Props) => {

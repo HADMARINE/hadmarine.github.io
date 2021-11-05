@@ -9,12 +9,13 @@ const Timeline = styled.div<{ animationState: boolean }>`
     rgba(255, 255, 255, 1) 100%
   );
   margin-top: -400px;
+  margin-right: -1px;
   color: black;
   width: 16px;
   height: 3000px; //inherit;
   animation: ${(props) =>
       props.animationState
-        ? 'main_timeline_appear 1s'
+        ? 'main_timeline_appear 0.5s'
         : 'main_timeline_disappear 0.5s'}
     ease-in-out;
   opacity: ${(props) => (props.animationState ? 1 : 0)};
@@ -24,7 +25,7 @@ const Timeline = styled.div<{ animationState: boolean }>`
       opacity: 0;
     }
     50% {
-      opacity: 0;
+      /* opacity: 0; */
     }
     100% {
       opacity: 1;

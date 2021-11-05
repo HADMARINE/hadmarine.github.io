@@ -243,7 +243,7 @@ const Main = (props: Props) => {
                 />
                 <TimelineImage
                   src={
-                    'https://st.depositphotos.com/1000350/1663/i/950/depositphotos_16632665-stock-photo-shocked-bald-man-holding-comb.jpg'
+                    'https://www.webdesignerdepot.com/cdn-origin/uploads/2018/06/featured_adobe.jpg'
                   }
                 />
                 <TimelineContent>
