@@ -36,11 +36,12 @@ const GlobalSubtitle = styled.div<{
   background-color: ${(props) => props?.subtitleValue?.[2]};
   padding-top: 30px;
   padding-left: 30px;
-  padding-right: 60px;
-  padding-bottom: 5px;
+  /* padding-right: 60px; */
+  /* padding-bottom: 0px; */
   border-radius: 0 0 40px 0;
-  box-shadow: 0 0 80px 120px ${(props) => props?.subtitleValue?.[2]};
+  box-shadow: 0 0 30px 40px ${(props) => props?.subtitleValue?.[2]};
   z-index: 100;
+  width: 100%;
 
   animation: ${(props) => (props.animationState ? 'appear' : 'disappear')}
     ${(props) => (props.animationState ? '0.5s' : '0.1s')} ease-in-out;
@@ -83,13 +84,13 @@ const Main = (props: Props) => {
     <Wrapper>
       <MainHeader />
 
-      {subtitle && (
+      {/* {subtitle && (
         <GlobalSubtitle
           subtitleValue={subtitle}
           animationState={subtitleAnimationState}>
           {subtitle[0]}
         </GlobalSubtitle>
-      )}
+      )} */}
       <Parallax
         renderLayer={(percentage) => (
           <Margin vertical={`${20 * percentage}vh`} />
@@ -180,8 +181,11 @@ const Main = (props: Props) => {
               backgroundColor: '#2D5473',
               color: 'white',
             }}>
-            <Margin vertical={'10vh'} />
-
+            <Parallax
+              renderLayer={(percentage) => (
+                <Margin vertical={`${70 * percentage}vh`} />
+              )}
+            />
             <Parallax
               renderLayer={(percentage) => {
                 // console.log(percentage);
@@ -206,7 +210,7 @@ const Main = (props: Props) => {
                     style={{
                       opacity: percentage,
                       marginTop: `${
-                        (percentage > 0.5 ? 0.5 : percentage) * 30
+                        (percentage > 0.5 ? 0.5 : percentage) * 40
                       }vh`,
                       // paddingBottom: '200px',
                       backgroundColor: '#2d5473',
@@ -218,6 +222,11 @@ const Main = (props: Props) => {
                   </Text>
                 );
               }}
+            />
+            <Parallax
+              renderLayer={(percentage) => (
+                <Margin vertical={`${100 + -100 * percentage}vh`} />
+              )}
             />
             <Flex
               horizontal
