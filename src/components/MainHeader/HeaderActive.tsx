@@ -89,7 +89,11 @@ const HeaderActive = (props: Props) => {
 
   return (
     <Wrapper className={'unselectable'} percent={props.pos}>
-      <Img src={active_slope} height={'60px'} style={{ zIndex: -1 }} />
+      <Img
+        src={active_slope}
+        height={'60px'}
+        style={{ zIndex: -1, marginRight: '-1px' }}
+      />
       <Flex
         width={'100%'}
         center

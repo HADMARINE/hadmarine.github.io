@@ -8,12 +8,10 @@ const Timeline = styled.div<{ animationState: boolean }>`
     rgba(255, 255, 255, 1) 200px,
     rgba(255, 255, 255, 1) 100%
   );
-  margin-top: 400px;
+  margin-top: -400px;
   color: black;
   width: 16px;
   height: 3000px; //inherit;
-  position: absolute;
-  left: 100px;
   animation: ${(props) =>
       props.animationState
         ? 'main_timeline_appear 1s'

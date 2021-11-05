@@ -9,7 +9,6 @@ interface Props {
 const Wrapper = styled.div`
   background-color: white;
   color: #2d5473;
-  margin-left: 115px;
   font-size: 36px;
   font-weight: 600;
   text-shadow: 1px 1px 2px #00000070;

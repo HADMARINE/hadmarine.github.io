@@ -217,19 +217,29 @@ const Main = (props: Props) => {
                 );
               }}
             />
-            <Timeline animationState={subtitleAnimationState} />
             <Flex
-              vertical
+              horizontal
               style={{
                 width: '100vw',
-                marginTop: '400px',
+                marginTop: '600px',
                 alignItems: 'flex-start',
+                justifyContent: 'center',
               }}>
-              <TimelineYearIndicator>2021</TimelineYearIndicator>
-              <TimelineTitle
-                title={'Sunrinthon Website Development'}
-                subtitle={'Official school compectition project'}
-              />
+              <Timeline animationState={subtitleAnimationState} />
+
+              <Flex
+                vertical
+                style={{
+                  width: '80vw',
+                  maxWidth: '1270px',
+                  alignItems: 'flex-start',
+                }}>
+                <TimelineYearIndicator>2021</TimelineYearIndicator>
+                <TimelineTitle
+                  title={'Sunrinthon Website Development'}
+                  subtitle={'Official school compectition project'}
+                />
+              </Flex>
             </Flex>
 
             <Margin vertical={'800vh'} />

@@ -11,12 +11,11 @@ interface Props {
 const Wrapper = styled.div<{ lg: boolean }>`
   background-color: white;
   color: #2d5473;
-  margin-left: 115px;
   font-size: 36px;
   font-weight: bold;
   text-shadow: 1px 1px 2px #00000070;
   height: ${(props) => (props.lg ? '112px' : '56px')};
-  width: 700px;
+  width: 100%;
   padding-left: 20px;
   justify-content: flex-end;
   align-items: center;
