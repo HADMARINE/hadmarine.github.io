@@ -11,6 +11,8 @@ import { Parallax } from 'react-parallax';
 import Timeline from './Timeline';
 import TimelineYearIndicator from './TimelineYearIndicator';
 import TimelineTitle from './TimelineTitle';
+import TimelineImage from './TimelineImage';
+import TimelineContent from './TimelineContent';
 
 const Wrapper = styled.div`
   display: flex;
@@ -239,6 +241,22 @@ const Main = (props: Props) => {
                   title={'Sunrinthon Website Development'}
                   subtitle={'Official school compectition project'}
                 />
+                <TimelineImage
+                  src={
+                    'https://st.depositphotos.com/1000350/1663/i/950/depositphotos_16632665-stock-photo-shocked-bald-man-holding-comb.jpg'
+                  }
+                />
+                <TimelineContent>
+                  Worked as Leader of development team on 2022 Sunrinthon.
+                  <br />
+                  <br />
+                  Developed backend server with Node.js, MongoDB and something
+                  else.
+                  <br />
+                  <br />
+                  This is my childhood dream so you must not blame it. Rather
+                  not blame it, but just enjoy as a substitute.
+                </TimelineContent>
               </Flex>
             </Flex>
 
