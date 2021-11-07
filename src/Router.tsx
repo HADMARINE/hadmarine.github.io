@@ -1,5 +1,6 @@
 import React from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import { Routes } from 'react-router';
 import PageNotFound from '@pages/PageNotFound';
 import Main from './pages/Main';
 import AdminLogin from './pages/Admin/Login';
@@ -7,11 +8,11 @@ import AdminLogin from './pages/Admin/Login';
 const ClientRouter = (
   <>
     <Router basename={'/'}>
-      <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/login" component={AdminLogin} />
-        <Route component={PageNotFound} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<AdminLogin />} />
+        <Route element={<PageNotFound />} />
+      </Routes>
     </Router>
   </>
 );
