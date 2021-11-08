@@ -17,6 +17,11 @@ export default async function login(props: {
     localStorage.setItem('refresh-token', res.data.refresh);
     return { result: true };
   } else {
-    return { result: false, message: res.data.message };
+    console.log(res);
+    return {
+      result: false,
+      message:
+        (res.raw as any).response.data.message || res.code || 'Login Failed',
+    };
   }
 }

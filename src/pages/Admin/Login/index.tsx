@@ -28,7 +28,7 @@ const AdminLogin = () => {
 
   const handleLogin = async () => {
     const result = await login({ id, password });
-    if (result.result) {
+    if (result?.result) {
       // push window location
     } else {
       alert(result.message);

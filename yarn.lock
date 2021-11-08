@@ -7905,12 +7905,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eqb-request-client@npm:0.7.2":
-  version: 0.7.2
-  resolution: "eqb-request-client@npm:0.7.2"
+"eqb-request-client@npm:1.0.0-rc3":
+  version: 1.0.0-rc3
+  resolution: "eqb-request-client@npm:1.0.0-rc3"
   dependencies:
     axios: ^0.21.1
-  checksum: af16068bce96ccbceefffbd876acadda641b79fa6ee0eb5029c56298e84cbb4a52e7555fdcacdbdacc6bc4f803502c5c145831097428af9afde1ef8b830c5472
+  checksum: 345a5499f6364a0b749e314f055c56acbbe5f6ffd118912e150e12b2f0950f37c039182420471289552d9c00f78516b9e8303a86e416e29348b6340c03e816d9
   languageName: node
   linkType: hard
 
@@ -9483,7 +9483,7 @@ fsevents@^1.2.7:
     core-decorators: ^0.20.0
     cross-env: ^7.0.3
     dotenv: ^10.0.0
-    eqb-request-client: 0.7.2
+    eqb-request-client: 1.0.0-rc3
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-babel: ^5.3.1
