@@ -4,14 +4,20 @@ import { Routes } from 'react-router';
 import PageNotFound from '@pages/PageNotFound';
 import Main from './pages/Main';
 import AdminLogin from './pages/Admin/Login';
+import AdminPost from './pages/Admin/Manager';
+import PortfolioManager from './pages/Admin/Manager/Portfolio';
+import BlogPostManager from './pages/Admin/Manager/BlogPost';
 
 const ClientRouter = (
   <>
     <Router basename={'/'}>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/login" element={<AdminLogin />} />
-        <Route element={<PageNotFound />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/manager/home" element={<AdminPost />} />
+        <Route path="/admin/manager/portfolio" element={<PortfolioManager />} />
+        <Route path="/admin/manager/blogpost" element={<BlogPostManager />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   </>
