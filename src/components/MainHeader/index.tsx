@@ -56,7 +56,7 @@ const MainHeader = (props: Props) => {
         </a>
         <FlexSpacer flex={1} />
         <HeaderSelector
-          data={['Portfolio', 'Contact', 'Blog']}
+          data={['portfolio', 'contact', 'blog']}
           index={index}
           setIndex={setIndex}
         />

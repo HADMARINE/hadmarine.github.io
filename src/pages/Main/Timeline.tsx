@@ -12,7 +12,9 @@ const Timeline = styled.div<{ animationState: boolean }>`
   margin-right: -1px;
   color: black;
   width: 16px;
-  height: 3000px; //inherit;
+  /* height: 100px; //inherit; */
+  /* position: relative; */
+  align-self: stretch;
   animation: ${(props) =>
       props.animationState
         ? 'main_timeline_appear 0.5s'

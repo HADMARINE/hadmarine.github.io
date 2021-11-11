@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { observer } from 'mobx-react';
 import MainHeader from '@src/components/MainHeader';
 import { Text } from '@src/components/assets/Text';
 import { Margin } from '@src/components/assets/Format';
-import { Flex } from '@src/components/assets/Wrapper';
+import { Flex, FlexSpacer } from '@src/components/assets/Wrapper';
 import Img from '@src/components/assets/Img';
 import hLogoKey from '../../assets/img/hadmarine_logo_key.png';
 import { Parallax } from 'react-parallax';
@@ -13,6 +12,10 @@ import TimelineYearIndicator from './TimelineYearIndicator';
 import TimelineTitle from './TimelineTitle';
 import TimelineImage from './TimelineImage';
 import TimelineContent from './TimelineContent';
+import { Link } from 'react-router-dom';
+import { GetPortfolioAll, PortfolioInterface } from '@src/api/portfolio';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const Wrapper = styled.div`
   display: flex;
@@ -77,8 +80,18 @@ const Main = (props: Props) => {
   >(null);
   const [subtitleAnimationState, setSubtitleAnimationState] =
     React.useState(false);
-  const [timelineAnimationState, setTimelineAnimationState] =
-    React.useState(false);
+  // const [timelineAnimationState, setTimelineAnimationState] =
+  //   React.useState(false);
+  const [portfolioData, setPortfolioData] = React.useState<
+    PortfolioInterface[]
+  >([]);
+
+  React.useEffect(() => {
+    const res = async () => {
+      setPortfolioData(await GetPortfolioAll());
+    };
+    res();
+  }, []);
 
   return (
     <Wrapper>
@@ -105,7 +118,7 @@ const Main = (props: Props) => {
           <Text
             fontFamily={'Urbanist'}
             fontSize={'90px'}
-            fontWeight={900}
+            fontWeight={500}
             style={{ letterSpacing: `7px` }}>
             hadmarine
           </Text>
@@ -117,9 +130,9 @@ const Main = (props: Props) => {
           <Text
             fontFamily={'Urbanist'}
             fontSize={'32px'}
-            fontWeight={900}
+            fontWeight={500}
             style={{ marginTop: '-20px' }}>
-            Full stack developer
+            Beyond present.
           </Text>
           <Parallax
             renderLayer={(percentage) => (
@@ -204,7 +217,7 @@ const Main = (props: Props) => {
                 return (
                   <Text
                     fontFamily={'Urbanist'}
-                    fontWeight={900}
+                    fontWeight={100}
                     fontSize={'70px'}
                     letterSpacing={'1.5px'}
                     style={{
@@ -218,7 +231,7 @@ const Main = (props: Props) => {
                       textAlign: 'center',
                       zIndex: 200,
                     }}>
-                    Projects
+                    projects
                   </Text>
                 );
               }}
@@ -246,41 +259,213 @@ const Main = (props: Props) => {
                   alignItems: 'flex-start',
                 }}>
                 <TimelineYearIndicator>2021</TimelineYearIndicator>
-                <TimelineTitle
-                  title={'Sunrinthon Website Development'}
-                  subtitle={'Official school compectition project'}
-                />
-                <TimelineImage
-                  src={
-                    'https://www.webdesignerdepot.com/cdn-origin/uploads/2018/06/featured_adobe.jpg'
-                  }
-                />
-                <TimelineContent>
-                  Worked as Leader of development team on 2022 Sunrinthon.
-                  <br />
-                  <br />
-                  Developed backend server with Node.js, MongoDB and something
-                  else.
-                  <br />
-                  <br />
-                  This is my childhood dream so you must not blame it. Rather
-                  not blame it, but just enjoy as a substitute.
-                </TimelineContent>
+                {portfolioData.map((value, index, arr) => {
+                  return (
+                    <>
+                      <Parallax
+                        style={{ width: '100%' }}
+                        renderLayer={(percentage) => {
+                          return (
+                            <TimelineTitle
+                              title={value.title}
+                              subtitle={value.subtitle}
+                              style={{
+                                marginTop: `${
+                                  (0.6 - percentage) * 30 > 0
+                                    ? `${(0.6 - percentage) * 30}vh`
+                                    : '0px'
+                                }`,
+                              }}
+                            />
+                          );
+                        }}
+                      />
+                      {value.thumbnail && (
+                        <>
+                          <Margin vertical={'10px'} />
+                          <Parallax
+                            style={{ width: '100%' }}
+                            renderLayer={(percentage) => {
+                              return (
+                                <TimelineImage
+                                  src={value.thumbnail}
+                                  style={{
+                                    marginTop: `${
+                                      (0.6 - percentage) * 30 > 0
+                                        ? `${(0.6 - percentage) * 30}vh`
+                                        : '0px'
+                                    }`,
+                                  }}
+                                />
+                              );
+                            }}
+                          />
+                        </>
+                      )}
+                      <Margin vertical={'10px'} />
+                      <Parallax
+                        style={{ width: '100%' }}
+                        renderLayer={(percentage) => {
+                          return (
+                            <TimelineContent
+                              style={{
+                                marginTop: `${
+                                  (0.6 - percentage) * 30 > 0
+                                    ? `${(0.6 - percentage) * 30}vh`
+                                    : '0px'
+                                }`,
+                              }}>
+                              <Margin vertical={'10px'} />
+                              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {value.content}
+                              </ReactMarkdown>
+                            </TimelineContent>
+                          );
+                        }}
+                      />
+                      <Margin vertical={'200px'} />
+                    </>
+                  );
+                })}
+                <Margin vertical={'50vh'} />
               </Flex>
             </Flex>
 
-            <Margin vertical={'800vh'} />
-
-            <Flex vertical center width={'100vw'}>
-              <Text fontFamily={'Urbanist'} textAlign={'center'}>
-                Copyright 2021 hadmarine
-                <br />
-                <span>
-                  All design and interactions was developed by{' '}
-                  <a href={'http://git.hadmarine.com'}>hadmarine</a>
-                </span>
-              </Text>
-            </Flex>
+            <Parallax
+              style={{
+                boxShadow: '0px -5px 3px 1px #0e1e2c',
+              }}
+              renderLayer={(percentage) => {
+                return (
+                  <Flex
+                    vertical
+                    width={'100vw'}
+                    style={{
+                      backgroundColor: '#0e1e2c',
+                      height: `${percentage * 100 + 30}vh`,
+                      zIndex: 100,
+                    }}>
+                    <Margin vertical={`${percentage * 50 + 10}vh`} />
+                    <Flex
+                      vertical
+                      width={'95vw'}
+                      height={'90vh'}
+                      style={{
+                        alignItems: 'flex-start',
+                      }}>
+                      <Text fontSize={'72px'}>hadmarine</Text>
+                      <Text
+                        fontSize={'24px'}
+                        style={{ marginTop: '-36px', marginLeft: '5px' }}>
+                        Beyond present.
+                      </Text>
+                      <Margin vertical={'100px'} />
+                      <Flex
+                        width={'100%'}
+                        style={{
+                          alignItems: 'flex-start',
+                        }}>
+                        <Flex vertical flex={1}>
+                          <Text
+                            fontSize={'36px'}
+                            fontWeight={300}
+                            style={{
+                              width: '100%',
+                              textAlign: 'center',
+                              marginBottom: '10px',
+                            }}>
+                            contacts
+                          </Text>
+                          <Flex
+                            fitParent
+                            vertical
+                            style={{
+                              alignItems: 'flex-start',
+                            }}>
+                            There are no contact method at the moment.
+                          </Flex>
+                        </Flex>
+                        <Flex vertical flex={1}>
+                          <Text
+                            fontSize={'36px'}
+                            fontWeight={300}
+                            style={{
+                              width: '100%',
+                              textAlign: 'center',
+                              marginBottom: '10px',
+                            }}>
+                            summary
+                          </Text>
+                          <Flex
+                            fitParent
+                            vertical
+                            style={{
+                              alignItems: 'flex-start',
+                            }}>
+                            <span>
+                              &middot; HTTP/Socket Server with Javascript
+                              (Typescript), Rust, C++, C#
+                            </span>
+                            <span>
+                              &middot; Webpage with React, Vue (Redux, MobX)
+                            </span>
+                            <span>
+                              &middot; Parallax scrolling / Scroll animation
+                              interaction development
+                            </span>
+                            <span>&middot; App with React-Native</span>
+                            <span>
+                              &middot; Dev-Ops with AWS, GCP, OCI, CircleCI -
+                              CI/CD, AutoScaling, LoadBalancing, G/B Deployment
+                            </span>
+                            <span>
+                              &middot; Use linux commands and handle shell
+                              scripts
+                            </span>
+                            <span>
+                              &middot; MongoDB, Maria/MySQL, MSSQL ...
+                            </span>
+                            <span>
+                              &middot; Track user behavoiur via Google Analytics
+                            </span>
+                            <span>
+                              &middot; More details are on my{' '}
+                              <a href={'https://github.com/hadmarine'}>
+                                Github
+                              </a>
+                              .
+                            </span>
+                          </Flex>
+                        </Flex>
+                      </Flex>
+                      <FlexSpacer flex={1} />
+                      <Flex
+                        horizontal
+                        style={{
+                          alignSelf: 'flex-end',
+                          justifySelf: 'flex-end',
+                          width: '100%',
+                          alignItems: 'flex-end',
+                        }}>
+                        <Text textAlign={'left'}>
+                          Copyright 2021 hadmarine
+                          <br />
+                          <span>
+                            All design and interactions was developed by{' '}
+                            <a href={'http://git.hadmarine.com'}>hadmarine</a>
+                          </span>
+                        </Text>
+                        <FlexSpacer flex={1} />
+                        <span>
+                          For Admin, Click
+                          <Link to={'/admin/login'}> Here</Link>
+                        </span>
+                      </Flex>
+                    </Flex>
+                  </Flex>
+                );
+              }}
+            />
           </Flex>
         </Flex>
       </Text>

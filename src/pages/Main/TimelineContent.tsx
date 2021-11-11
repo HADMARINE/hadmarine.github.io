@@ -16,8 +16,8 @@ const Wrapper = styled.div`
   font-weight: 500;
   /* text-shadow: 1px 1px 2px #00000050; */
   width: calc(100% - ${MARGIN_VALUE});
-  padding-left: 20px;
-  padding-right: 10px;
+  /* padding-left: 20px; */
+  /* padding-right: 10px; */
   padding-top: 10px;
   padding-bottom: 10px;
   justify-content: flex-end;
@@ -32,10 +32,19 @@ const Wrapper = styled.div`
   margin-left: ${MARGIN_VALUE};
   line-height: 34px;
   letter-spacing: 1px;
+  display: flex;
+
+  img {
+    width: calc(100% - 30px);
+  }
+  * {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
 `;
 
-const TimelineImage = (props: Props) => {
+const TimelineContent = (props: Props) => {
   return <Wrapper style={props.style}>{props.children}</Wrapper>;
 };
 
-export default TimelineImage;
+export default TimelineContent;
