@@ -457,8 +457,7 @@ const Main = (props: Props) => {
                         </Text>
                         <FlexSpacer flex={1} />
                         <span>
-                          For Admin, Click
-                          <Link to={'/admin/login'}> Here</Link>
+                          <Link to={'/admin/login'}>.</Link>
                         </span>
                       </Flex>
                     </Flex>

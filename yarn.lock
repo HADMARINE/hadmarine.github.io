@@ -10026,7 +10026,7 @@ fsevents@^1.2.7:
     node-sass: ^6.0.1
     postcss: ^7.0.36
     prettier: ^2.4.1
-    quick-react-admin: ^0.1.1-rc.11
+    quick-react-admin: ^0.1.1-rc.17
     quickcert: ^1.1.2
     react: ^17.0.2
     react-app-rewire-alias: ^1.0.3
@@ -16297,9 +16297,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"quick-react-admin@npm:^0.1.1-rc.11":
-  version: 0.1.1-rc.11
-  resolution: "quick-react-admin@npm:0.1.1-rc.11"
+"quick-react-admin@npm:^0.1.1-rc.17":
+  version: 0.1.1-rc.17
+  resolution: "quick-react-admin@npm:0.1.1-rc.17"
   dependencies:
     "@fortawesome/fontawesome-svg-core": ^1.2.36
     "@fortawesome/free-solid-svg-icons": ^5.15.4
@@ -16322,7 +16322,7 @@ fsevents@^1.2.7:
     require-strip-json-comments: ^2.0.0
     styled-components: ^5.3.3
     use-debounce: ^7.0.1
-  checksum: e7803765451f125db70273592eb89b4687af25c1a960995e9f05a2227bb95c5c3d472057789b684e7c9bfab240312e11300b15f67649b9f048f70dca77239590
+  checksum: d678f8599ba1b946f4819f9efda96b34999ab5f84d8047124df154130b97898e1d3ef554c3905034991087d679d932e883cdf24e0484cd5d4c952f733e1559b3
   languageName: node
   linkType: hard
 

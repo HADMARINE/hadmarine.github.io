@@ -26,7 +26,7 @@ const PortfolioManager = () => {
           thumbnail: DataTypes.string({ title: 'Thumbnail' }),
           content: DataTypes.markdown({ title: 'Content' }),
           link: DataTypes.string({ title: 'Link' }),
-          date: DataTypes.dateTime({ title: 'Date' }),
+          date: DataTypes.date({ title: 'Date' }),
         }}
         getApi={GetPortfolio}
         patchApi={PatchPortfolio}
