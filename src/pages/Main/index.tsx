@@ -259,74 +259,78 @@ const Main = (props: Props) => {
                   alignItems: 'flex-start',
                 }}>
                 <TimelineYearIndicator>2021</TimelineYearIndicator>
-                {portfolioData.map((value, index, arr) => {
-                  return (
-                    <>
-                      <Parallax
-                        style={{ width: '100%' }}
-                        renderLayer={(percentage) => {
-                          return (
-                            <TimelineTitle
-                              title={value.title}
-                              subtitle={value.subtitle}
-                              style={{
-                                marginTop: `${
-                                  (0.6 - percentage) * 30 > 0
-                                    ? `${(0.6 - percentage) * 30}vh`
-                                    : '0px'
-                                }`,
+                {!portfolioData ? (
+                  <div style={{ marginLeft: '20px' }}>Data fetch failed</div>
+                ) : (
+                  portfolioData.map((value, index, arr) => {
+                    return (
+                      <>
+                        <Parallax
+                          style={{ width: '100%' }}
+                          renderLayer={(percentage) => {
+                            return (
+                              <TimelineTitle
+                                title={value.title}
+                                subtitle={value.subtitle}
+                                style={{
+                                  marginTop: `${
+                                    (0.6 - percentage) * 30 > 0
+                                      ? `${(0.6 - percentage) * 30}vh`
+                                      : '0px'
+                                  }`,
+                                }}
+                              />
+                            );
+                          }}
+                        />
+                        {value.thumbnail && (
+                          <>
+                            <Margin vertical={'10px'} />
+                            <Parallax
+                              style={{ width: '100%' }}
+                              renderLayer={(percentage) => {
+                                return (
+                                  <TimelineImage
+                                    src={value.thumbnail}
+                                    style={{
+                                      marginTop: `${
+                                        (0.6 - percentage) * 30 > 0
+                                          ? `${(0.6 - percentage) * 30}vh`
+                                          : '0px'
+                                      }`,
+                                    }}
+                                  />
+                                );
                               }}
                             />
-                          );
-                        }}
-                      />
-                      {value.thumbnail && (
-                        <>
-                          <Margin vertical={'10px'} />
-                          <Parallax
-                            style={{ width: '100%' }}
-                            renderLayer={(percentage) => {
-                              return (
-                                <TimelineImage
-                                  src={value.thumbnail}
-                                  style={{
-                                    marginTop: `${
-                                      (0.6 - percentage) * 30 > 0
-                                        ? `${(0.6 - percentage) * 30}vh`
-                                        : '0px'
-                                    }`,
-                                  }}
-                                />
-                              );
-                            }}
-                          />
-                        </>
-                      )}
-                      <Margin vertical={'10px'} />
-                      <Parallax
-                        style={{ width: '100%' }}
-                        renderLayer={(percentage) => {
-                          return (
-                            <TimelineContent
-                              style={{
-                                marginTop: `${
-                                  (0.6 - percentage) * 30 > 0
-                                    ? `${(0.6 - percentage) * 30}vh`
-                                    : '0px'
-                                }`,
-                              }}>
-                              <Margin vertical={'10px'} />
-                              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                {value.content}
-                              </ReactMarkdown>
-                            </TimelineContent>
-                          );
-                        }}
-                      />
-                      <Margin vertical={'200px'} />
-                    </>
-                  );
-                })}
+                          </>
+                        )}
+                        <Margin vertical={'10px'} />
+                        <Parallax
+                          style={{ width: '100%' }}
+                          renderLayer={(percentage) => {
+                            return (
+                              <TimelineContent
+                                style={{
+                                  marginTop: `${
+                                    (0.6 - percentage) * 30 > 0
+                                      ? `${(0.6 - percentage) * 30}vh`
+                                      : '0px'
+                                  }`,
+                                }}>
+                                <Margin vertical={'10px'} />
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                  {value.content}
+                                </ReactMarkdown>
+                              </TimelineContent>
+                            );
+                          }}
+                        />
+                        <Margin vertical={'200px'} />
+                      </>
+                    );
+                  })
+                )}
                 <Margin vertical={'50vh'} />
               </Flex>
             </Flex>
