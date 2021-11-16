@@ -11,7 +11,6 @@ import {
 import { AdminTable, DataTypes } from 'quick-react-admin';
 
 const Wrapper = styled.div`
-  /* margin: 50px; */
   margin-top: 50px;
 `;
 

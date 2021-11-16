@@ -35,11 +35,18 @@ export const GetPortfolio: AdminTableGetApi<PortfolioInterface> = async (
 
 export const GetPortfolioAll = async (): Promise<PortfolioInterface[]> => {
   const res = await client.get(`/blog/portfolio/all`);
-  return res.data;
+
+  return Array.isArray(res.data)
+    ? res.data.map((v) => {
+        return {
+          ...v,
+          date: new Date(v.date),
+        };
+      })
+    : res.data;
 };
 
 export const PatchPortfolio: AdminTablePatchApi = async (props) => {
-  console.log(props);
   const res = await client.patch(
     `/admin/blog/portfolio/${props.docId}`,
     props.data,

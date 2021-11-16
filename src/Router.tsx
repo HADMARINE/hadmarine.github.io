@@ -2,7 +2,8 @@ import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { Routes } from 'react-router';
 import PageNotFound from '@pages/PageNotFound';
-import Main from './pages/Main';
+import Initial from '@pages/Initial';
+import Portfolio from './pages/Main/Portfolio';
 import AdminLogin from './pages/Admin/Login';
 import AdminPost from './pages/Admin/Manager';
 import PortfolioManager from './pages/Admin/Manager/Portfolio';
@@ -12,7 +13,8 @@ const ClientRouter = (
   <>
     <Router basename={'/'}>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Initial />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/manager/home" element={<AdminPost />} />
         <Route path="/admin/manager/portfolio" element={<PortfolioManager />} />

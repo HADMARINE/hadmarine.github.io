@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import Button from '../assets/Button';
 import { Text } from '../assets/Text';
 import { Flex } from '../assets/Wrapper';
 import HeaderActive from './HeaderActive';
+import useIsMount from '@util/hooks/useIsMount';
 
 interface Props {
   data: string[];
@@ -20,6 +22,16 @@ const Wrapper = styled.div`
 `;
 
 const HeaderSelector = (props: Props) => {
+  const navigate = useNavigate();
+  const isMount = useIsMount();
+
+  React.useEffect(() => {
+    if (isMount) {
+      return;
+    }
+    navigate(`#/${props.data[props.index]}`, { replace: true });
+  }, [props.index]);
+
   return (
     <Wrapper>
       <HeaderActive

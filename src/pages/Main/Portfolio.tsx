@@ -231,7 +231,7 @@ const Main = (props: Props) => {
                       textAlign: 'center',
                       zIndex: 200,
                     }}>
-                    projects
+                    Projects
                   </Text>
                 );
               }}
@@ -258,13 +258,20 @@ const Main = (props: Props) => {
                   maxWidth: '1270px',
                   alignItems: 'flex-start',
                 }}>
-                <TimelineYearIndicator>2021</TimelineYearIndicator>
                 {!portfolioData ? (
                   <div style={{ marginLeft: '20px' }}>Data fetch failed</div>
                 ) : (
                   portfolioData.map((value, index, arr) => {
                     return (
                       <>
+                        {(index === 0 ||
+                          // console.log(value?.date) ||
+                          value?.date?.getFullYear() !==
+                            arr[index - 1]?.date?.getFullYear()) && (
+                          <TimelineYearIndicator>
+                            {value?.date?.getFullYear().toString()}
+                          </TimelineYearIndicator>
+                        )}
                         <Parallax
                           style={{ width: '100%' }}
                           renderLayer={(percentage) => {
