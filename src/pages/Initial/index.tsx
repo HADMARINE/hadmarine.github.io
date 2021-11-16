@@ -1,10 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 const Initial = () => {
   const navigate = useNavigate();
   React.useEffect(() => {
-    // navigate('/portfolio');
+    // navigate('portfolio');
+    // navigate('',{
+    // state
+    // })
     // window.location.replace('/#/portfolio');
   }, []);
   return <></>;

@@ -5,7 +5,7 @@ import { Text } from '@src/components/assets/Text';
 import React from 'react';
 import styled from 'styled-components';
 import login from '@api/login';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.div`
   width: 100vw;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../assets/Button';
 import { Text } from '../assets/Text';
@@ -29,7 +29,11 @@ const HeaderSelector = (props: Props) => {
     if (isMount) {
       return;
     }
-    navigate(`#/${props.data[props.index]}`, { replace: true });
+    navigate(`../${props.data[props.index]}`);
+
+    if (props.data[props.index] !== 'portfolio') {
+      alert('Not opened yet!');
+    }
   }, [props.index]);
 
   return (

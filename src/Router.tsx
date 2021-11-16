@@ -13,8 +13,10 @@ const ClientRouter = (
   <>
     <Router basename={'/'}>
       <Routes>
-        <Route path="/" element={<Initial />} />
+        <Route path="/" element={<Portfolio />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Portfolio />} />
+        <Route path="/blog" element={<Portfolio />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/manager/home" element={<AdminPost />} />
         <Route path="/admin/manager/portfolio" element={<PortfolioManager />} />

@@ -39,8 +39,6 @@ const GlobalSubtitle = styled.div<{
   background-color: ${(props) => props?.subtitleValue?.[2]};
   padding-top: 30px;
   padding-left: 30px;
-  /* padding-right: 60px; */
-  /* padding-bottom: 0px; */
   border-radius: 0 0 40px 0;
   box-shadow: 0 0 30px 40px ${(props) => props?.subtitleValue?.[2]};
   z-index: 100;
