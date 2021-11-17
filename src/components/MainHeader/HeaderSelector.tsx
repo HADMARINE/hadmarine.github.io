@@ -31,10 +31,18 @@ const HeaderSelector = (props: Props) => {
     }
     navigate(`../${props.data[props.index]}`);
 
-    if (props.data[props.index] !== 'portfolio') {
-      alert('Not opened yet!');
-    }
+    // if (props.data[props.index] !== 'portfolio') {
+    //   // alert('Not opened yet!');
+    // }
   }, [props.index]);
+
+  React.useEffect(() => {
+    props.setIndex(
+      props.data.findIndex(
+        (v) => v === (location.hash as any).split('#')[1].slice(1),
+      ),
+    );
+  }, [location.hash]);
 
   return (
     <Wrapper>
@@ -49,7 +57,7 @@ const HeaderSelector = (props: Props) => {
               style={{
                 display: 'flex',
                 flex: 1,
-                // zIndex: props.index === i ? -1 : 1,
+                zIndex: props.index === i ? -1 : 1,
               }}
               width={'undef'}
               variant={'transparent'}

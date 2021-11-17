@@ -93,7 +93,7 @@ const Main = (props: Props) => {
 
   return (
     <Wrapper>
-      <MainHeader />
+      {/* <MainHeader /> */}
 
       {/* {subtitle && (
         <GlobalSubtitle
