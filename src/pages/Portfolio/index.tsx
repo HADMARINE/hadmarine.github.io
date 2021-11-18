@@ -391,7 +391,30 @@ const Main = (props: Props) => {
                             style={{
                               alignItems: 'flex-start',
                             }}>
-                            There are no contact method at the moment.
+                            <span>
+                              &middot; Email:{' '}
+                              <a href="mailto:contact@hadmarine.com">
+                                contact@hadmarine.com
+                              </a>
+                            </span>
+                            <span>
+                              &middot; Telegram:{' '}
+                              <a href="https://t.me/HADMARINE">
+                                t.me/hadmarine
+                              </a>
+                            </span>
+                            <span>
+                              &middot; Github:{' '}
+                              <a href="https://t.me/HADMARINE">
+                                github.com/hadmarine
+                              </a>
+                            </span>
+                            <span>
+                              &middot; Twitter:{' '}
+                              <a href="https://twitter.com/hadmarine">
+                                t.me/hadmarine
+                              </a>
+                            </span>
                           </Flex>
                         </Flex>
                         <Flex vertical flex={1}>
