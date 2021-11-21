@@ -50,7 +50,7 @@ const MainHeader = (props: Props) => {
           rel={'noreferrer'}>
           <Img src={githubLogo} width={'45px'} style={{ marginTop: '-5px' }} />
         </a>
-        <Margin horizontal={'5px'} />
+        <Margin horizontal={'10px'} />
         <a href={'https://t.me/HADMARINE'} target={'_blank'} rel={'noreferrer'}>
           <Img src={tgLogo} width={'45px'} style={{ marginTop: '-5px' }} />
         </a>
