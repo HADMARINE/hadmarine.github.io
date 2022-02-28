@@ -38,7 +38,7 @@
     "@types/react-portal": "^4.0.4",
     "axios": "^0.24.0",
     "cross-env": "^7.0.3",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.0",
     "eqb-request-client": "1.0.0-rc3",
     "immutable": "4.0.0",
     "lodash": "^4.17.21",
