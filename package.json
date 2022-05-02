@@ -36,7 +36,7 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@types/lodash": "^4.14.176",
     "@types/react-portal": "^4.0.4",
-    "axios": "^0.24.0",
+    "axios": "^0.27.2",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "eqb-request-client": "1.0.0-rc3",
