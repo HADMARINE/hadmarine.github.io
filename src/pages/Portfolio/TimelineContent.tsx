@@ -37,14 +37,23 @@ const Wrapper = styled.div`
   img {
     width: calc(100% - 30px);
   }
-  * {
+  /* * {
     padding-left: 20px;
     padding-right: 10px;
-  }
+  } */
+`;
+
+const InnerWrapper = styled.div`
+  padding-left: 20px;
+  padding-right: 10px;
 `;
 
 const TimelineContent = (props: Props) => {
-  return <Wrapper style={props.style}>{props.children}</Wrapper>;
+  return (
+    <Wrapper style={props.style}>
+      <InnerWrapper>{props.children}</InnerWrapper>
+    </Wrapper>
+  );
 };
 
 export default TimelineContent;
