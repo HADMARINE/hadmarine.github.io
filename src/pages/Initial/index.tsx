@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Initial = () => {
   const navigate = useNavigate();
   React.useEffect(() => {
-    navigate('portfolio');
+    navigate('blog');
     // navigate('',{
     // state
     // })

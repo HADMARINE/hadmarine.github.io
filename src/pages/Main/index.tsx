@@ -3,12 +3,13 @@ import MainHeader from '@src/components/MainHeader';
 import React from 'react';
 import Portfolio from '@pages/Portfolio';
 import { Flex } from '@src/components/assets/Wrapper';
+import Blog from '@pages/Blog';
 
 const Main = () => {
   const GetCurrentPage = () => {
     const pages = {
       portfolio: Portfolio,
-      blog: '',
+      blog: Blog,
       contact: '',
     };
     const res = (pages as any)[(location.hash as any).split('#')[1].slice(1)];
@@ -17,7 +18,7 @@ const Main = () => {
     if (!res)
       return () => (
         <Flex width={'100vw'} height={'100vh'} center>
-          Work In Progress
+          PAGE NOT FOUND
         </Flex>
       );
     return res;
