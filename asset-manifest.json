@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.59bf729e.chunk.css",
+    "main.js": "/static/js/main.91890f4b.chunk.js",
+    "runtime-main.js": "/static/js/runtime-main.fcc05d7d.js",
+    "static/js/2.31488615.chunk.js": "/static/js/2.31488615.chunk.js",
+    "static/js/3.e53990f2.chunk.js": "/static/js/3.e53990f2.chunk.js",
+    "index.html": "/index.html",
+    "static/js/2.31488615.chunk.js.LICENSE.txt": "/static/js/2.31488615.chunk.js.LICENSE.txt",
+    "static/media/github_logo.87bcde26.png": "/static/media/github_logo.87bcde26.png",
+    "static/media/hadmarine_logo_key.3b7d0e8b.png": "/static/media/hadmarine_logo_key.3b7d0e8b.png",
+    "static/media/hadmarine_logo_white.5218516e.png": "/static/media/hadmarine_logo_white.5218516e.png",
+    "static/media/main_header_slope.dd16f37b.svg": "/static/media/main_header_slope.dd16f37b.svg",
+    "static/media/telegram_logo.a90f7d24.png": "/static/media/telegram_logo.a90f7d24.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fcc05d7d.js",
+    "static/js/2.31488615.chunk.js",
+    "static/css/main.59bf729e.chunk.css",
+    "static/js/main.91890f4b.chunk.js"
+  ]
+}
