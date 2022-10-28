@@ -31,7 +31,12 @@ export const GetBlogPost: AdminTableGetApi<BlogPostInterface> = async (
   };
 };
 export const GetBlogPostAll = async (): Promise<BlogPostInterface[]> => {
-  const res = await client.get('/blog/post/all');
+  const res = await client.get('/blog/post', {
+    params: {
+      skip:0,
+      limit: 0
+    }
+  });
 
   return Array.isArray(res.data)
     ? res.data.map((v) => {

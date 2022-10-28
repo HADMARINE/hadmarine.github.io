@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 const Initial = () => {
   const navigate = useNavigate();
   React.useEffect(() => {
-    navigate('blog');
-    // navigate('',{
-    // state
-    // })
+    // navigate('', {
+    //   state,
+    // });
     // window.location.replace('/#/portfolio');
+    navigate('portfolio');
   }, []);
   return <></>;
 };

@@ -7,13 +7,14 @@ const Wrapper = styled.div``;
 const BlogPostManager = () => {
   return (
     <Wrapper>
-      <AdminTable
+      {/* <AdminTable
         title={'BlogPost'}
         contents={{
           title: DataTypes.string({ title: 'Title' }),
           subtitle: DataTypes.string({ title: 'Subtitle' }),
+          tag: DataTypes.
         }}
-      />
+      /> */}
     </Wrapper>
   );
 };

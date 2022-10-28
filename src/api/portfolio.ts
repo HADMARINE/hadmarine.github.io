@@ -19,7 +19,7 @@ export interface PortfolioInterface {
 export const GetPortfolio: AdminTableGetApi<PortfolioInterface> = async (
   props,
 ) => {
-  const res = await client.get('/blog/portfolio', {
+  const res = await client.get('/portfolios', {
     params: {
       skip: props.skip,
       limit: props.limit,
@@ -34,7 +34,17 @@ export const GetPortfolio: AdminTableGetApi<PortfolioInterface> = async (
 };
 
 export const GetPortfolioAll = async (): Promise<PortfolioInterface[]> => {
-  const res = await client.get(`/blog/portfolio/all`);
+  const res = await client.get(`/portfolios`, {
+    params:{
+      limit: 10,
+      offset: 0,
+      date:{
+        from : 0,
+        to : Date.now().toString()
+      }
+      // teitle:"hello"
+    }
+  });
 
   return Array.isArray(res.data)
     ? res.data.map((v) => {
