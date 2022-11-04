@@ -10034,7 +10034,7 @@ fsevents@^1.2.7:
     jest: 26.6.0
     lodash: ^4.17.21
     mobx: ^6.3.5
-    mobx-react: ^7.2.1
+    mobx-react: ^7.5.3
     mobx-state-tree: ^5.0.4
     node-sass: ^6.0.1
     postcss: ^7.0.36
@@ -13713,35 +13713,35 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mobx-react-lite@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "mobx-react-lite@npm:3.2.0"
+"mobx-react-lite@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "mobx-react-lite@npm:3.4.0"
   peerDependencies:
     mobx: ^6.1.0
-    react: ^16.8.0 || ^17
+    react: ^16.8.0 || ^17 || ^18
   peerDependenciesMeta:
     react-dom:
       optional: true
     react-native:
       optional: true
-  checksum: 595b5fcb9e9999d9b1d68200f27b0da073eddf1965df75a9cdd447e5c710b9486f684110c1b5f75830c485879203375d5fc4c1194cf219d8cdbfd0fa1d3694e0
+  checksum: 9294e127e281c8b37ec7bcaf17de479f50519e6ad485b58d7b991291900511541a5a718653759d3cf6503462c70325d025e1c2ed376d4584fb1b2d3aac9d9b48
   languageName: node
   linkType: hard
 
-"mobx-react@npm:^7.2.1":
-  version: 7.2.1
-  resolution: "mobx-react@npm:7.2.1"
+"mobx-react@npm:^7.5.3":
+  version: 7.5.3
+  resolution: "mobx-react@npm:7.5.3"
   dependencies:
-    mobx-react-lite: ^3.2.0
+    mobx-react-lite: ^3.4.0
   peerDependencies:
     mobx: ^6.1.0
-    react: ^16.8.0 || ^17
+    react: ^16.8.0 || ^17 || ^18
   peerDependenciesMeta:
     react-dom:
       optional: true
     react-native:
       optional: true
-  checksum: ddcdab16ce0977dd8e0b9d324f43c0ef5d9de491b4ad881eaf18f127a967e88d916fd580597decc2eac6617f30f444bdf620be540e487194e3391738b2c3b7b2
+  checksum: 6c1c1edc778109f789c6fa9b7a49e633e45a2b3c8fd12c7bd594f6ffec58048d21841936eaf67b0b7c19a32813fbd70fa9025a8c3bca3309f607824bd5aecd1e
   languageName: node
   linkType: hard
 
