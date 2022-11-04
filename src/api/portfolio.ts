@@ -1,49 +1,46 @@
 import client from './client';
-
-import {
-  AdminTableDeleteApi,
-  AdminTableGetApi,
-  AdminTablePatchApi,
-  AdminTablePostApi,
-} from 'quick-react-admin';
+import { GetApiQueryBase } from './interfaces';
 
 export interface PortfolioInterface {
   title: string;
-  subtitle: string;
-  thumbnail: string;
+  subtitle?: string;
+  thumbnail?: string;
   content: string;
-  link: Record<string, string>;
+  link?: Record<string, string>;
   date: Date;
 }
 
-export const GetPortfolio: AdminTableGetApi<PortfolioInterface> = async (
-  props,
-) => {
-  const res = await client.get('/portfolios', {
-    params: {
-      skip: props.skip,
-      limit: props.limit,
-    },
-  });
+// export const GetPortfolio: AdminTableGetApi<PortfolioInterface> = async (
+//   props,
+// ) => {
+//   const res = await client.get('/portfolios', {
+//     params: {
+//       skip: props.skip,
+//       limit: props.limit,
+//     },
+//   });
 
-  return {
-    data: res.data?.data || [],
-    result: res.result,
-    length: res.data?.length || 0,
-  };
-};
+//   return {
+//     data: res.data?.data || [],
+//     result: res.result,
+//     length: res.data?.length || 0,
+//   };
+// };
 
-export const GetPortfolioAll = async (): Promise<PortfolioInterface[]> => {
+export const GetPortfolio = async (
+  params?: {
+    title?: string;
+    subtitle?: string;
+  } & GetApiQueryBase,
+): Promise<PortfolioInterface[]> => {
   const res = await client.get(`/portfolios`, {
-    params:{
-      limit: 10,
-      offset: 0,
-      date:{
-        from : 0,
-        to : Date.now().toString()
-      }
-      // teitle:"hello"
-    }
+    params: {
+      limit: params?.limit || 0,
+      offset: params?.offset || 0,
+      date: params?.date,
+      title: params?.title,
+      subtitle: params?.subtitle,
+    },
   });
 
   return Array.isArray(res.data)
@@ -56,26 +53,39 @@ export const GetPortfolioAll = async (): Promise<PortfolioInterface[]> => {
     : res.data;
 };
 
-export const PatchPortfolio: AdminTablePatchApi = async (props) => {
-  const res = await client.patch(
-    `/admin/blog/portfolio/${props.docId}`,
-    props.data,
-  );
+export const PatchPortfolio = async (
+  id: string,
+  props: Partial<PortfolioInterface>,
+): Promise<{
+  result: boolean;
+  message?: string;
+}> => {
+  const res = await client.patch(`/portfolios/${id}`, props);
 
   return {
     result: res.result,
-    message: (res?.raw as any)?.response?.data?.message,
+    message: res.data?.message,
   };
 };
 
-export const DeletePortfolio: AdminTableDeleteApi = async (props) => {
-  const res = await client.delete(`/admin/blog/portfolio/${props.docId}`);
+export const DeletePortfolio = async (
+  id: string,
+): Promise<{
+  result: boolean;
+  message?: string;
+}> => {
+  const res = await client.delete(`/portfolios/${id}`);
 
-  return { result: res.result, message: res?.code };
+  return { result: res.result, message: res.data?.code };
 };
 
-export const PostPortfolio: AdminTablePostApi = async (props) => {
-  const res = await client.post(`/admin/blog/portfolio`, props.data);
+export const PostPortfolio = async (
+  props: PortfolioInterface,
+): Promise<{
+  result: boolean;
+  message?: string;
+}> => {
+  const res = await client.post(`/portfolios`, props);
 
-  return { result: res.result, message: res?.code };
+  return { result: res.result, message: res.data?.code };
 };

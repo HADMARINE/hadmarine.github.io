@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainHeader from '@src/components/MainHeader';
 import { Text } from '@src/components/assets/Text';
 import { Margin } from '@src/components/assets/Format';
 import { Flex, FlexSpacer } from '@src/components/assets/Wrapper';
 import Img from '@src/components/assets/Img';
-import hLogoKey from '../../assets/img/hadmarine_logo_key.png';
+import hLogoKey from '../../../assets/img/hadmarine_logo_key.png';
 import { Parallax } from 'react-parallax';
 import Timeline from './Timeline';
 import TimelineYearIndicator from './TimelineYearIndicator';
@@ -13,7 +12,7 @@ import TimelineTitle from './TimelineTitle';
 import TimelineImage from './TimelineImage';
 import TimelineContent from './TimelineContent';
 import { Link } from 'react-router-dom';
-import { GetPortfolioAll, PortfolioInterface } from '@src/api/portfolio';
+import { GetPortfolio, PortfolioInterface } from '@src/api/portfolio';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -86,22 +85,13 @@ const Main = (props: Props) => {
 
   React.useEffect(() => {
     const res = async () => {
-      setPortfolioData(await GetPortfolioAll());
+      setPortfolioData(await GetPortfolio());
     };
     res();
   }, []);
 
   return (
     <Wrapper>
-      {/* <MainHeader /> */}
-
-      {/* {subtitle && (
-        <GlobalSubtitle
-          subtitleValue={subtitle}
-          animationState={subtitleAnimationState}>
-          {subtitle[0]}
-        </GlobalSubtitle>
-      )} */}
       <Parallax
         renderLayer={(percentage) => (
           <Margin vertical={`${20 * percentage}vh`} />
@@ -133,7 +123,7 @@ const Main = (props: Props) => {
             Beyond present.
           </Text>
           <Parallax
-            renderLayer={(percentage) => (
+            renderLayer={(percentage: number) => (
               <>
                 <Margin
                   vertical={`${
@@ -258,6 +248,8 @@ const Main = (props: Props) => {
                 }}>
                 {!portfolioData ? (
                   <div style={{ marginLeft: '20px' }}>Data fetch failed</div>
+                ) : portfolioData.length === 0 ? (
+                  <div style={{ marginLeft: '20px' }}>Fetching data...</div>
                 ) : (
                   portfolioData.map((value, index, arr) => {
                     return (

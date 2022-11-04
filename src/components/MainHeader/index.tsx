@@ -32,9 +32,9 @@ const MainHeader = (props: Props) => {
 
         <a
           href={
-            window.location.hostname === 'hadmarine.github.io'
-              ? 'https://hadmarine.github.io'
-              : 'https://www.hadmarine.com'
+            window.location.hostname === 'www.hadmarine.com'
+              ? 'https://www.hadmarine.com'
+              : 'https://hadmarine.github.io'
           }>
           <Img
             src={hadmarineLogo}

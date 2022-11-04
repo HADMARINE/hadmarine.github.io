@@ -29,19 +29,15 @@ const HeaderSelector = (props: Props) => {
     if (isMount) {
       return;
     }
-    navigate(`../${props.data[props.index]}`);
-
-    // if (props.data[props.index] !== 'portfolio') {
-    //   // alert('Not opened yet!');
-    // }
+    navigate(`/main/${props.data[props.index]}`);
   }, [props.index]);
 
   React.useEffect(() => {
-    props.setIndex(
-      props.data.findIndex(
-        (v) => v === (location.hash as any).split('#')[1].slice(1),
-      ),
+    const index = props.data.findIndex(
+      (v) => v === (location.hash as any).split('#')[1].slice(1).split('/')[1],
     );
+
+    props.setIndex(index !== -1 ? index : props.index);
   }, [location.hash]);
 
   return (
