@@ -2906,6 +2906,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:6.2.0":
+  version: 6.2.0
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.2.0"
+  checksum: 1d0a3340dc2d2798609195cf77f1b0db98f0d87144044eb7cd3d78745baac8509705c6ebc7cce3d9bb36c7d7358ca064f77f39d86478ab1e7aa7aadc344cfd91
+  languageName: node
+  linkType: hard
+
 "@fortawesome/fontawesome-common-types@npm:^0.2.36":
   version: 0.2.36
   resolution: "@fortawesome/fontawesome-common-types@npm:0.2.36"
@@ -2928,6 +2935,15 @@ __metadata:
   dependencies:
     "@fortawesome/fontawesome-common-types": ^0.2.36
   checksum: eb037b703827ee37af3387a964afc7a190ff42a674ef46f4a6c295b634a38e849741eca78306b6423eaf3062d6ab1e7372aac5be2aec06f0fd9e8bd8110efcf9
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-solid-svg-icons@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@fortawesome/free-solid-svg-icons@npm:6.2.0"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.0
+  checksum: b5edf24be491e8493028b7fd2158fb73f3a76491087970609c0ef6a4449fd4744312fe768bfcffc90a5ef86b9980f9ab8ebb36927ba8d9854c2fa638ceadb0ac
   languageName: node
   linkType: hard
 
@@ -9999,7 +10015,7 @@ fsevents@^1.2.7:
     "@babel/preset-react": ^7.16.0
     "@craco/craco": ^6.4.0
     "@fortawesome/fontawesome-svg-core": ^1.2.36
-    "@fortawesome/free-solid-svg-icons": ^5.15.4
+    "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.1.16
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^12.1.2
