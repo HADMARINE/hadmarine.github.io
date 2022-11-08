@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const PortfolioManager = () => {
   return (
     <Wrapper>
-      <AdminTable
+      {/* <AdminTable
         title={'Portfolio'}
         contents={{
           title: DataTypes.string({ title: 'Title' }),
@@ -31,7 +31,7 @@ const PortfolioManager = () => {
         patchApi={PatchPortfolio}
         deleteApi={DeletePortfolio}
         postApi={PostPortfolio}
-      />
+      /> */}
     </Wrapper>
   );
 };

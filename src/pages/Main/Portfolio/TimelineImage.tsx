@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const MARGIN_VALUE = '80px';
 
 interface Props {
-  src: string;
+  src: string | undefined;
   style?: React.CSSProperties;
 }
 

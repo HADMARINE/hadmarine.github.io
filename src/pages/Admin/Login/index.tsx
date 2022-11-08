@@ -4,7 +4,7 @@ import Input from '@src/components/assets/Input';
 import { Text } from '@src/components/assets/Text';
 import React from 'react';
 import styled from 'styled-components';
-import login from '@api/login';
+// import login from '@api/login';
 import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.div`
@@ -34,12 +34,12 @@ const AdminLogin = () => {
       alert('Please fill in the blank!');
       return;
     }
-    const result = await login({ id, password });
-    if (result?.result) {
-      navigate('/admin/manager/home');
-    } else {
-      alert(result.message);
-    }
+    // const result = await login({ id, password });
+    // if (result?.result) {
+    //   navigate('/admin/manager/home');
+    // } else {
+    //   alert(result.message);
+    // }
   };
 
   const handleEnterKey = (e: any) => {

@@ -43,10 +43,10 @@ function customClient() {
   async function renewAccessToken(): Promise<{ result: boolean }> {
     return baseClient
       .post('/auth/resign')
-      .then((res) => {
+      .then(() => {
         return { result: true };
       })
-      .catch((err) => {
+      .catch(() => {
         return { result: false };
       });
   }
@@ -106,19 +106,19 @@ function customClient() {
       resolver({ ...config, url, method: 'options' }),
     post: async <T = any>(
       url: string,
-      data: any,
+      data?: any,
       config?: AxiosRequestConfig,
     ): Promise<ResponseResult<T>> =>
       resolver({ ...config, url, data, method: 'post' }),
     put: <T = any>(
       url: string,
-      data: any,
+      data?: any,
       config?: AxiosRequestConfig,
     ): Promise<ResponseResult<T>> =>
       resolver({ ...config, url, data, method: 'put' }),
     patch: <T = any>(
       url: string,
-      data: any,
+      data?: any,
       config?: AxiosRequestConfig,
     ): Promise<ResponseResult<T>> =>
       resolver({ ...config, url, data, method: 'patch' }),

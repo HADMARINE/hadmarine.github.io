@@ -1,8 +1,8 @@
 import Button from '@src/components/assets/Button';
 import { Margin } from '@src/components/assets/Format';
 import { Text } from '@src/components/assets/Text';
-import { Flex } from '@src/components/assets/Wrapper';
 import React from 'react';
+import { Admin } from 'react-admin';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -28,11 +28,12 @@ const AdminPost = () => {
   React.useEffect(() => {
     if (!sessionStorage.getItem('access-token')) {
       navigate('/', { replace: true });
-    }
+    } // TODO : VERIFY ADMIN VIA SERVER
   }, []);
 
   return (
     <Wrapper>
+      {/* <Admin authProvider={} /> */}
       <Text fontSize={'36px'} fontWeight={300}>
         Admin page
       </Text>
