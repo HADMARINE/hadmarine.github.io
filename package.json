@@ -50,7 +50,7 @@
     "quickcert": "^1.1.2",
     "react": "^17.0.2",
     "react-admin": "^4.5.0",
-    "react-bootstrap": "^2.0.1",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^17.0.2",
     "react-hot-toast": "^2.4.0",
     "react-is": "^17.0.2",
