@@ -33,7 +33,6 @@ const AdminPost = () => {
 
   return (
     <Wrapper>
-      {/* <Admin authProvider={} /> */}
       <Text fontSize={'36px'} fontWeight={300}>
         Admin page
       </Text>
