@@ -85,7 +85,16 @@ const Main = (props: Props) => {
 
   React.useEffect(() => {
     const res = async () => {
-      setPortfolioData(await GetPortfolio());
+      setPortfolioData(
+        (
+          await GetPortfolio({
+            pagination: {
+              limit: 0,
+              offset: 0,
+            },
+          })
+        )?.data || undefined,
+      );
     };
     res();
   }, []);
