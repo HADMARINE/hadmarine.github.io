@@ -1,8 +1,13 @@
 export interface GetApiQueryBase {
-  limit?: number;
-  offset?: number;
-  date?: {
-    from?: Date;
-    to?: Date;
+  pagination?: { limit?: number; offset?: number };
+  query?: {
+    date?: {
+      from?: Date;
+      to?: Date;
+    };
+  };
+  sort?: {
+    field: string;
+    order: string;
   };
 }
