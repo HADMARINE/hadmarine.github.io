@@ -6,6 +6,10 @@ interface FlexProps {
   left?: boolean;
   right?: boolean;
   center?: boolean;
+  up?: boolean;
+  down?: boolean;
+  selfStart?: boolean;
+  selfEnd?: boolean;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   flex?: number | string;
@@ -30,15 +34,64 @@ interface FlexHorizontalProps {
 // * Middleware functions
 
 const justifyDirection = (props: FlexProps) => {
-  if (props.left) return 'flex-start';
-  else if (props.right) return 'flex-end';
-  else if (props.center) return 'center';
-  return '';
-};
+  // eslint-disable-next-line prefer-const
+  let v: Record<string, string> = {};
 
-const flexDirection = (props: FlexProps) => {
-  if (props.horizontal) return 'row';
-  else if (props.vertical) return 'column';
+  if (props.vertical) {
+    v.flexDirection = 'column';
+    if (props.center) {
+      v.justifyContent = 'center';
+      v.alignItems = 'center';
+    }
+
+    if (props.left) {
+      v.alignItems = 'flex-start';
+    }
+
+    if (props.right) {
+      v.alignItems = 'flex-end';
+    }
+
+    if (props.up) {
+      v.justifyContent = 'flex-start';
+    }
+
+    if (props.down) {
+      v.justifyContent = 'flex-end';
+    }
+  } else {
+    v.flexDirection = 'row';
+
+    if (props.center) {
+      v.justifyContent = 'center';
+      v.flexDirection = 'center';
+    }
+
+    if (props.left) {
+      v.justifyContent = 'flex-start';
+    }
+
+    if (props.right) {
+      v.justifyContent = 'flex-end';
+    }
+    if (props.up) {
+      v.alignItems = 'flex-start';
+    }
+
+    if (props.down) {
+      v.alignItems = 'flex-end';
+    }
+  }
+
+  if (props.selfStart) {
+    v.alignSelf = 'flex-start';
+  }
+
+  if (props.selfEnd) {
+    v.alignSelf = 'flex-end';
+  }
+
+  return v;
 };
 
 // * Components
@@ -46,13 +99,12 @@ const flexDirection = (props: FlexProps) => {
 export const Flex = (props: FlexProps) => {
   const FlexStyle: React.CSSProperties = {
     display: 'flex',
-    justifyContent: justifyDirection(props),
-    flexDirection: flexDirection(props),
     alignItems: 'center',
     flex: props.flex,
     height: props.height,
     width: props.width,
     ...props.style,
+    ...justifyDirection(props),
   };
 
   if (props.fit) {

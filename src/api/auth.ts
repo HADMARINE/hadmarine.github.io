@@ -21,7 +21,7 @@ export async function login(props: {
 
   return {
     result: false,
-    message: res.data.message || res.data.code || 'Login Failed',
+    message: res.data?.message || res.data?.code || 'Login Failed',
   };
 }
 
@@ -61,7 +61,7 @@ export async function checkAdminAuthority(): Promise<
 
   return {
     result: false,
-    message: res.data.message || res.data.code || 'Admin verification failed',
+    message: res.data?.message || res.data?.code || 'Admin verification failed',
   };
 }
 
@@ -76,6 +76,6 @@ export async function getAuthorities(): Promise<
 
   return {
     result: false,
-    message: res.data.message || res.data.code || 'Server request failure',
+    message: res?.data?.message || res?.data?.code || 'Server request failure',
   };
 }

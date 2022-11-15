@@ -3,6 +3,7 @@ import './styles/index.scss';
 
 import Router from './Router';
 import { Toaster } from 'react-hot-toast';
+import ReactModal from 'react-modal';
 
 const App: React.FC = () => {
   return (
@@ -15,5 +16,7 @@ const App: React.FC = () => {
     </>
   );
 };
+
+ReactModal.setAppElement('#root');
 
 export default App;

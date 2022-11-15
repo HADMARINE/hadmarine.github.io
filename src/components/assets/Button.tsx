@@ -24,6 +24,7 @@ interface Props {
   raw?: boolean;
   disabled?: boolean;
   href?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const theme = {

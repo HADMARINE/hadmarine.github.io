@@ -11,8 +11,11 @@ import {
   DeleteManyParams,
 } from 'react-admin';
 import { DataProviderFactory } from './DataProviderFactory';
+import { PortfoliosDataProvider } from './dataProviders/PortfoliosDataProvider';
 
-const dataProviderLists: Record<string, DataProviderFactory> = {};
+const dataProviderLists: Record<string, DataProviderFactory> = {
+  portfolios: new PortfoliosDataProvider(),
+};
 
 function getDataProvider(key: string): DataProviderFactory {
   const res = dataProviderLists[key];
@@ -27,8 +30,8 @@ export const dataProvider: DataProvider<string> = {
   ) => {
     const result = await getDataProvider(resource).getList({
       pagination: {
-        offset: params.pagination.page,
         limit: params.pagination.perPage,
+        offset: (params.pagination.page - 1) * params.pagination.perPage,
       },
       query: params.filter,
       sort: params.sort,

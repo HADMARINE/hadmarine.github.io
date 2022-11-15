@@ -1,12 +1,16 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-type ResponseResult<T> = AxiosResponse<T> & { result: boolean };
+type ResponseResult<T, U extends boolean = boolean> = {
+  data: T;
+  result: U;
+  raw: U extends true ? AxiosResponse<T> : AxiosError<T>;
+};
 
 function getApiUri(): string {
   const apiUriPreferences = {
-    production: process.env.REACT_APP_PROD_API_URI,
-    development: process.env.REACT_APP_DEV_API_URI,
-    test: process.env.REACT_APP_TEST_API_URI,
+    production: 'https://api.page.hadmarine.com',
+    development: 'http://localhost:61000',
+    test: 'http://localhost:61000',
   };
   const addr = apiUriPreferences[process.env.NODE_ENV || 'development'];
   if (!addr) {
@@ -15,28 +19,10 @@ function getApiUri(): string {
   return addr;
 }
 
-// const OPTIONS: Parameters<typeof client>[1] = {
-//   onTokenResignFail: () => {
-//     localStorage.removeItem('refresh-token');
-//     sessionStorage.removeItem('access-token');
-//   },
-//   loggerOnError: console.error,
-//   loggerOnInfo: console.info,
-//   accessTokenHeaderKey: 'X-Access-Token',
-//   accessTokenResolver: {
-//     get: () => sessionStorage.getItem('access-token') || 'null',
-//     set: (value: string) => sessionStorage.setItem('access-token', value),
-//   },
-//   refreshTokenResolver: {
-//     get: () => localStorage.getItem('refresh-token') || 'null',
-//     set: (value: string) => localStorage.setItem('refresh-token', value),
-//   },
-//   tokenResignEndpiont: 'auth/resign',
-// };
-
 function customClient() {
   const baseClient = axios.create({
     baseURL: getApiUri(),
+    withCredentials: true,
   });
 
   // It renews access token
@@ -55,23 +41,48 @@ function customClient() {
     config: AxiosRequestConfig,
   ): Promise<ResponseResult<T>> {
     try {
-      return await baseClient.request(config);
-    } catch (e: any) {
+      const res = await baseClient.request(config);
+      return {
+        result: true,
+        data: res.data,
+        raw: res,
+      };
+    } catch (e: unknown) {
+      if (!(e instanceof AxiosError)) {
+        throw new Error('AXIOS Error not clarified');
+      }
+
       if (e.response) {
         if (e.response.data?.code === 'JWT_TOKEN_EXPIRED') {
           if (!(await renewAccessToken()).result) {
-            return { ...(e?.response?.data || e), result: false };
+            return {
+              result: false,
+              data: e.response?.data || {},
+              raw: e,
+            };
           } else {
             return await resolver(config);
           }
         }
-        return { ...(e?.response?.data || e), result: false };
+        return {
+          result: false,
+          data: e.response?.data || ({} as any),
+          raw: e,
+        };
       } else if (e.request) {
         console.error(e.request);
-        return { ...(e?.response?.data || e), result: false };
+        return {
+          result: false,
+          data: e.request?.data || ({} as any),
+          raw: e,
+        };
       } else {
         console.error('Error', e.message);
-        return { ...(e?.response?.data || e), result: false };
+        return {
+          result: false,
+          data: {} as any,
+          raw: e,
+        };
       }
     }
   }

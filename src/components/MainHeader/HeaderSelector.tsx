@@ -34,7 +34,8 @@ const HeaderSelector = (props: Props) => {
 
   React.useEffect(() => {
     const index = props.data.findIndex(
-      (v) => v === (location.hash as any).split('#')[1].slice(1).split('/')[1],
+      (v) => v === (location.hash as any).split('/')[1],
+      // (v) => v === (location.hash as any).split('#')[1].slice(1).split('/')[1],
     );
 
     props.setIndex(index !== -1 ? index : props.index);

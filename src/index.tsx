@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import dotenv from 'dotenv';
 
 import App from './App';
 import reportWebVitals from '@src/reportWebVitals';
@@ -12,8 +11,6 @@ export const RootComponent = (
 );
 
 function Root(): void {
-  dotenv.config();
-
   ReactDOM.render(RootComponent, document.getElementById('root'));
 
   reportWebVitals();

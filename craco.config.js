@@ -16,7 +16,7 @@ module.exports = {
     alias: pathResolver(configPaths('./tsconfig.paths.json')),
   },
   style: {
-    postcss: {
+    postcssOptions: {
       plugins: [require('tailwindcss'), require('autoprefixer')],
     },
   },

@@ -10,82 +10,118 @@ export interface PortfolioInterface {
   date: Date;
 }
 
-// export const GetPortfolio: AdminTableGetApi<PortfolioInterface> = async (
-//   props,
-// ) => {
-//   const res = await client.get('/portfolios', {
-//     params: {
-//       skip: props.skip,
-//       limit: props.limit,
-//     },
-//   });
-
-//   return {
-//     data: res.data?.data || [],
-//     result: res.result,
-//     length: res.data?.length || 0,
-//   };
-// };
-
 export const GetPortfolio = async (
   params?: {
-    title?: string;
-    subtitle?: string;
+    query?: {
+      title?: string;
+      subtitle?: string;
+      date?: { from?: Date; to?: Date };
+    };
   } & GetApiQueryBase,
-): Promise<PortfolioInterface[]> => {
+): Promise<{ data: PortfolioInterface[]; total: number }> => {
   const res = await client.get(`/portfolios`, {
     params: {
-      limit: params?.limit || 0,
-      offset: params?.offset || 0,
-      date: params?.date,
-      title: params?.title,
-      subtitle: params?.subtitle,
+      pagination: {
+        limit: params?.pagination?.limit || 0,
+        offset: params?.pagination?.offset || 0,
+      },
+      query: {
+        date: params?.query?.date,
+        ...params?.query,
+      },
+      sort: params?.sort,
     },
   });
 
-  return Array.isArray(res.data)
-    ? res.data.map((v) => {
+  const data = Array.isArray(res.data.data)
+    ? res.data.data.map((v: Record<string, any>) => {
         return {
           ...v,
           date: new Date(v.date),
         };
       })
-    : res.data;
+    : { ...res.data, date: new Date(res.data.date) };
+
+  return { data, total: res.data.total };
+};
+
+export const GetPortfolioById = async (
+  id: string,
+): Promise<PortfolioInterface> => {
+  const res = await client.get(`/portfolios/${id}`);
+
+  return res.data;
 };
 
 export const PatchPortfolio = async (
   id: string,
   props: Partial<PortfolioInterface>,
-): Promise<{
-  result: boolean;
-  message?: string;
-}> => {
+): Promise<
+  | {
+      result: true;
+      data: Record<string, any>;
+    }
+  | { result: false; message: string }
+> => {
   const res = await client.patch(`/portfolios/${id}`, props);
 
+  if (res.result) {
+    const { _id, ...rest } = res.data;
+
+    return {
+      result: true,
+      data: { id: _id, ...rest },
+    };
+  }
+
   return {
-    result: res.result,
+    result: false,
     message: res.data?.message,
   };
 };
 
 export const DeletePortfolio = async (
   id: string,
-): Promise<{
-  result: boolean;
-  message?: string;
-}> => {
+): Promise<
+  | {
+      result: true;
+      data: Record<string, any>;
+    }
+  | {
+      result: false;
+      message?: string;
+    }
+> => {
   const res = await client.delete(`/portfolios/${id}`);
 
-  return { result: res.result, message: res.data?.code };
+  if (res.result) {
+    const { _id, ...rest } = res.data;
+    return {
+      result: true,
+      data: { id: _id, ...rest },
+    };
+  }
+
+  return {
+    result: false,
+    message: res.data?.message,
+  };
 };
 
 export const PostPortfolio = async (
   props: PortfolioInterface,
-): Promise<{
-  result: boolean;
-  message?: string;
-}> => {
+): Promise<
+  | {
+      result: true;
+      data: Record<string, any>;
+    }
+  | { result: false; message: string }
+> => {
   const res = await client.post(`/portfolios`, props);
 
-  return { result: res.result, message: res.data?.code };
+  if (res.result) {
+    return { result: true, data: res.data };
+  } else {
+    return { result: false, message: res.data?.message || 'Request failed' };
+  }
 };

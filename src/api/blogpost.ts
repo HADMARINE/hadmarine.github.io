@@ -4,29 +4,25 @@ import client from './client';
 export interface BlogPostInterface {
   title: string;
   subtitle?: string;
-  tag?: string[];
+  tags?: string[];
   content: string;
-  date: Date;
+  createdDate: Date;
+  modifiedDate?: Date;
+  isPrivate: boolean;
+  viewCount: number;
 }
 
-// export const GetBlogPost: AdminTableGetApi<BlogPostInterface> = async (
-//   props,
-// ) => {
-//   const res = await client.get('/blogpost', {
-//     params: {
-//       skip: props.skip,
-//       limit: props.limit,
-//     },
-//   });
-
-//   return {
-//     data: res.data?.data || [],
-//     result: res.result,
-//     length: res.data?.length || 0,
-//   };
-// };
-export const GetBlogPost = async (): Promise<BlogPostInterface[]> => {
-  const res = await client.get('/blogpost', {
+export const GetBlogPost = async (params?: {
+  query?: {
+    title?: string;
+    subtitle?: string;
+    tags?: string[];
+    createdDate?: { from?: Date; to?: Date };
+    modifiedDate?: { from?: Date; to?: Date };
+    isPrivate?: boolean;
+  };
+}): Promise<BlogPostInterface[]> => {
+  const res = await client.get('/blogposts', {
     params: {
       skip: 0,
       limit: 0,
