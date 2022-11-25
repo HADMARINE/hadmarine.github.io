@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../assets/Button';
 import { Text } from '../assets/Text';
@@ -24,22 +24,24 @@ const Wrapper = styled.div`
 const HeaderSelector = (props: Props) => {
   const navigate = useNavigate();
   const isMount = useIsMount();
+  const location = useLocation();
 
-  React.useEffect(() => {
+  const indexSelector = () => {
+    const index = props.data.findIndex(
+      (v) => v === location.pathname.split('/')[2],
+    );
+
+    props.setIndex(index !== -1 ? index : props.index);
+  };
+
+  useEffect(() => {
     if (isMount) {
       return;
     }
     navigate(`/main/${props.data[props.index]}`);
   }, [props.index]);
 
-  React.useEffect(() => {
-    const index = props.data.findIndex(
-      (v) => v === (location.hash as any).split('/')[1],
-      // (v) => v === (location.hash as any).split('#')[1].slice(1).split('/')[1],
-    );
-
-    props.setIndex(index !== -1 ? index : props.index);
-  }, [location.hash]);
+  useEffect(() => indexSelector(), [location.hash]);
 
   return (
     <Wrapper>

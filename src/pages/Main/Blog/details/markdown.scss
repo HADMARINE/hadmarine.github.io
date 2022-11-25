@@ -1,0 +1,23 @@
+.markdown_stylesheet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  * {
+    display: flex;
+  }
+
+  p {
+    flex-direction: column;
+  }
+
+  img {
+    display: block;
+    align-self: center;
+    max-width: 100%;
+    max-height: 100vh;
+    height: auto;
+    object-fit: contain;
+    margin: 3rem auto;
+  }
+}

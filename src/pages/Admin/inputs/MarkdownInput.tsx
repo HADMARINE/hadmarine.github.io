@@ -38,7 +38,7 @@ export const MarkdownInput = (props: Omit<InputProps, 'type'>) => {
 
   return (
     <>
-      <Flex vertical left>
+      <Flex vertical left style={{ marginTop: '10px' }}>
         <span
           style={{
             marginLeft: '5px',

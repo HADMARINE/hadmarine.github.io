@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Img from '../assets/Img';
 import { Flex, FlexSpacer } from '../assets/Wrapper';
@@ -21,6 +21,8 @@ const Wrapper = styled.div`
   z-index: 99999;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
+
+const pageNames = ['portfolio', 'contact', 'blog'];
 
 const MainHeader = (props: Props) => {
   const [index, setIndex] = React.useState(0);
@@ -55,11 +57,7 @@ const MainHeader = (props: Props) => {
           <Img src={tgLogo} width={'45px'} style={{ marginTop: '-5px' }} />
         </a>
         <FlexSpacer flex={1} />
-        <HeaderSelector
-          data={['portfolio', 'contact', 'blog']}
-          index={index}
-          setIndex={setIndex}
-        />
+        <HeaderSelector data={pageNames} index={index} setIndex={setIndex} />
       </Flex>
     </Wrapper>
   );

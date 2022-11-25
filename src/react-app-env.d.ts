@@ -1,5 +1,7 @@
 /// <reference types="react-scripts" />
 
+declare module 'commonmark-helpers';
+
 type ReactCustomElementProps = Partial<{
   children: React.ReactNode;
   style: React.CSSProperties;

@@ -15,6 +15,8 @@ import { Link } from 'react-router-dom';
 import { GetPortfolio, PortfolioInterface } from '@src/api/portfolio';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import toast from 'react-hot-toast';
+import { useQuery } from 'react-query';
 
 const Wrapper = styled.div`
   display: flex;
@@ -77,27 +79,19 @@ const Main = (props: Props) => {
   >(null);
   const [subtitleAnimationState, setSubtitleAnimationState] =
     React.useState(false);
-  // const [timelineAnimationState, setTimelineAnimationState] =
-  //   React.useState(false);
-  const [portfolioData, setPortfolioData] = React.useState<
-    PortfolioInterface[]
-  >([]);
 
-  React.useEffect(() => {
-    const res = async () => {
-      setPortfolioData(
-        (
-          await GetPortfolio({
-            pagination: {
-              limit: 0,
-              offset: 0,
-            },
-          })
-        )?.data || undefined,
-      );
-    };
-    res();
-  }, []);
+  const { isLoading, error, data } = useQuery('portfolio_data', () =>
+    GetPortfolio({
+      pagination: { limit: 0, offset: 0 }, // TODO : Don't change 0 to default
+      sort: { field: 'date', order: 'DESC' },
+    }).then((res) => {
+      if (!res.result) {
+        toast.error(res.message || 'Data fetch failed');
+        throw new Error(res.message);
+      }
+      return res.data;
+    }),
+  );
 
   return (
     <Wrapper>
@@ -255,14 +249,14 @@ const Main = (props: Props) => {
                   maxWidth: '1270px',
                   alignItems: 'flex-start',
                 }}>
-                {!portfolioData ? (
+                {!data ? (
                   <div style={{ marginLeft: '20px' }}>Data fetch failed</div>
-                ) : portfolioData.length === 0 ? (
+                ) : isLoading ? (
                   <div style={{ marginLeft: '20px' }}>Fetching data...</div>
                 ) : (
-                  portfolioData.map((value, index, arr) => {
+                  data.map((value, index, arr) => {
                     return (
-                      <>
+                      <React.Fragment key={`portfolio_main_${index}`}>
                         {(index === 0 ||
                           // console.log(value?.date) ||
                           value?.date?.getFullYear() !==
@@ -333,7 +327,7 @@ const Main = (props: Props) => {
                           }}
                         />
                         <Margin vertical={'200px'} />
-                      </>
+                      </React.Fragment>
                     );
                   })
                 )}

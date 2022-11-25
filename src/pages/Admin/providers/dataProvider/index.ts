@@ -11,10 +11,12 @@ import {
   DeleteManyParams,
 } from 'react-admin';
 import { DataProviderFactory } from './DataProviderFactory';
+import { BlogpostsDataProvider } from './dataProviders/BlogpostsDataProvider';
 import { PortfoliosDataProvider } from './dataProviders/PortfoliosDataProvider';
 
 const dataProviderLists: Record<string, DataProviderFactory> = {
   portfolios: new PortfoliosDataProvider(),
+  blogposts: new BlogpostsDataProvider(),
 };
 
 function getDataProvider(key: string): DataProviderFactory {

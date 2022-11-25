@@ -1,19 +1,19 @@
 import {
-  DeletePortfolio,
-  GetPortfolio,
-  GetPortfolioById,
-  PostPortfolio,
-  PatchPortfolio,
-  PortfolioInterface,
-} from '@src/api/portfolio';
+  DeleteBlogPost,
+  GetBlogPost,
+  GetBlogpostById,
+  PatchBlogPost,
+  PostBlogpost,
+} from '@src/api/blogpost';
 import { DataProviderFactory } from '../DataProviderFactory';
-export class PortfoliosDataProvider implements DataProviderFactory {
-  public async getList(params: {
+
+export class BlogpostsDataProvider implements DataProviderFactory {
+  async getList(params: {
     pagination: { limit: number; offset: number };
     query: Record<string, any>;
     sort: { field: string; order: string };
   }): Promise<{ data: Record<string, any>[]; total: number }> {
-    const result = await GetPortfolio({
+    const result = await GetBlogPost({
       pagination: params.pagination,
       query: params.query,
       sort: params.sort,
@@ -26,19 +26,12 @@ export class PortfoliosDataProvider implements DataProviderFactory {
     const { data, total } = result;
 
     const modifiedData = data.map((d) => {
-      const { link, _id, ...rest } = d;
-      const newLink =
-        link &&
-        Object.entries(link).map(([k, v]) => {
-          return {
-            key: k,
-            value: v,
-          };
-        });
+      const { _id, tags, ...rest } = d;
+      const newTags = tags && tags.map((v) => ({ value: v }));
 
       return {
         ...rest,
-        link: newLink,
+        tags: newTags,
         id: _id,
       };
     });
@@ -48,37 +41,43 @@ export class PortfoliosDataProvider implements DataProviderFactory {
       total,
     };
   }
-  public async getOne(id: string): Promise<Record<string, any>> {
-    const result = await GetPortfolioById(id);
+  async getOne(id: string): Promise<Record<string, any>> {
+    const result = await GetBlogpostById(id);
 
     if (!result.result) {
       throw new Error(result.message);
     }
-    return result.data;
+
+    const { _id, tags, ...rest } = result.data;
+
+    return {
+      id: _id,
+      tags: tags?.map((v) => ({ value: v })),
+      ...rest,
+    };
   }
-  public async create(data: Record<string, any>): Promise<Record<string, any>> {
-    const link =
-      data.link &&
+  async create(data: Record<string, any>): Promise<Record<string, any>> {
+    const tags =
+      data.tags &&
       (() => {
-        if (data.link.length === 0) {
+        if (data.tags.length === 0) {
           return undefined;
         }
         // eslint-disable-next-line prefer-const
-        let value: Record<string, string> = {};
+        let value: string[] = [];
 
-        for (const v of data.link as { key: string; value: string }[]) {
-          value[v.key] = v.value;
+        for (const v of data.tags as { value: string }[]) {
+          value.push(v.value);
         }
         return value;
       })();
 
-    const result = await PostPortfolio({
+    const result = await PostBlogpost({
       title: data.title,
       subtitle: data.subtitle,
       content: data.content,
-      date: data.date,
-      link,
-      thumbnail: data.thumbnail,
+      isPrivate: data.isPrivate,
+      tags,
     });
 
     if (result.result) {
@@ -91,48 +90,45 @@ export class PortfoliosDataProvider implements DataProviderFactory {
       throw new Error(result.message);
     }
   }
-  public async update(
+  async update(
     id: string,
     data: Record<string, any>,
-  ): Promise<Omit<PortfolioInterface, '_id'> & { id: string }> {
-    const link =
-      data.link &&
+  ): Promise<Record<string, any>> {
+    const tags =
+      data.tags &&
       (() => {
-        if (data.link.length === 0) {
+        if (data.tags.length === 0) {
           return undefined;
         }
         // eslint-disable-next-line prefer-const
-        let value: Record<string, string> = {};
+        let value: string[] = [];
 
-        for (const v of data.link as { key: string; value: string }[]) {
-          value[v.key] = v.value;
+        for (const v of data.tags as { value: string }[]) {
+          value.push(v.value);
         }
         return value;
       })();
 
-    const result = await PatchPortfolio(id, {
+    const result = await PatchBlogPost(id, {
       title: data.title,
       subtitle: data.subtitle,
       content: data.content,
-      date: data.date,
-      link,
-      thumbnail: data.thumbnail,
+      isPrivate: data.isPrivate,
+      tags,
     });
 
     if (result.result) {
-      const { _id, ...restInner } = result.data;
+      const { _id, ...rest } = result.data;
       return {
         id: _id,
-        ...restInner,
+        ...rest,
       };
     }
 
     throw new Error(result.message);
   }
-  public async delete(
-    id: string,
-  ): Promise<Omit<PortfolioInterface, '_id'> & { id: string }> {
-    const result = await DeletePortfolio(id);
+  async delete(id: string): Promise<Record<string, any>> {
+    const result = await DeleteBlogPost(id);
 
     if (result.result) {
       const { _id, ...rest } = result.data;

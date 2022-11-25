@@ -1,9 +1,10 @@
 import { Toolbar } from '@mui/material';
 import { Margin } from '@src/components/assets/Format';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   ArrayField,
   ArrayInput,
+  AutocompleteArrayInput,
   BooleanField,
   BooleanInput,
   ChipField,
@@ -21,6 +22,7 @@ import {
   Show,
   ShowButton,
   SimpleForm,
+  SimpleFormIterator,
   SimpleShowLayout,
   SingleFieldList,
   TextField,
@@ -31,6 +33,8 @@ import { MarkdownField } from '../../fields/MarkdownField';
 import ClearIcon from '@mui/icons-material/Clear';
 import { MarkdownInput } from '../../inputs/MarkdownInput';
 import { Flex } from '@src/components/assets/Wrapper';
+import { GetBlogpostsTags } from '@src/api/blogpost';
+import { AutocompleteArrayFetchInput } from '../../inputs/AutocompleteArrayFetchInput';
 
 export const BlogpostList = () => {
   return (
@@ -43,11 +47,14 @@ export const BlogpostList = () => {
             <ChipField source="value" />
           </SingleFieldList>
         </ArrayField>
-        <MarkdownField source="content" label="Content" />
+
+        <MarkdownField source="content" modal label="Content" />
         <DateField source="createdDate" label="Created date" />
         <DateField source="modifiedDate" label="Latest modified date" />
         <BooleanField source="isPrivate" label="Private post" />
         <NumberField source="viewCount" label="Views" />
+        <EditButton />
+        <ShowButton />
       </Datagrid>
     </List>
   );
@@ -95,15 +102,18 @@ export const BlogpostCreate = () => {
         toolbar={<BlogpostCreateBottomToolbar />}>
         <TextInput source="title" validate={[required()]} label="Title" />
         <TextInput source="subtitle" label="Subtitle" />
-        <ArrayInput fullWidth source="tags" label="Tags">
-          <TextInput source="value" style={{ flex: 1 }} helperText="false" />
-        </ArrayInput>
+        <AutocompleteArrayFetchInput
+          source="tags"
+          label="Tags"
+          dataProvider={async () => await GetBlogpostsTags()}
+        />
+
         <MarkdownInput
           source="content"
           validate={[required()]}
           label="Content"
         />
-        <BooleanField source="isPrivate" label="Private post" />
+        <BooleanInput source="isPrivate" label="Private post" />
       </SimpleForm>
     </Create>
   );
@@ -134,19 +144,23 @@ export const BlogpostEdit = () => {
         toolbar={<BlogpostEditBottomToolbar />}>
         <TextInput source="title" validate={[required()]} label="Title" />
         <TextInput source="subtitle" label="Subtitle" />
-        <ArrayField source="tags" label="Tags">
-          <TextInput source="value" />
-        </ArrayField>
+        <AutocompleteArrayFetchInput
+          source="tags"
+          label="Tags"
+          dataProvider={async () => await GetBlogpostsTags()}
+        />
         <MarkdownInput
           source="content"
           validate={[required()]}
           label="Content"
         />
         <BooleanInput source="isPrivate" label="Private post" />
+      </SimpleForm>
+      <SimpleShowLayout>
         <NumberField source="viewCount" label="Views" />
         <DateField source="createdDate" label="Created date" />
         <DateField source="modifiedDate" label="Latest modified date" />
-      </SimpleForm>
+      </SimpleShowLayout>
     </Edit>
   );
 };

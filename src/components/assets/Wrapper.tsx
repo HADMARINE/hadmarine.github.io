@@ -20,6 +20,7 @@ interface FlexProps {
   height?: string;
   width?: string;
   fitParent?: boolean;
+  className?: string;
 }
 
 interface FlexSpacerProps {
@@ -117,7 +118,7 @@ export const Flex = (props: FlexProps) => {
   }
 
   return (
-    <div style={FlexStyle} onClick={props.onClick}>
+    <div style={FlexStyle} onClick={props.onClick} className={props.className}>
       {props.children}
     </div>
   );

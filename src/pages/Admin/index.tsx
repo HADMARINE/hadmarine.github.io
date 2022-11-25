@@ -8,6 +8,12 @@ import {
   PortfolioEdit,
   PortfolioShow,
 } from './resources/portfolios';
+import {
+  BlogpostCreate,
+  BlogpostEdit,
+  BlogpostList,
+  BlogpostShow,
+} from './resources/blogpost';
 
 const AdminPage = () => {
   return (
@@ -21,6 +27,13 @@ const AdminPage = () => {
         create={PortfolioCreate}
         edit={PortfolioEdit}
         show={PortfolioShow}
+      />
+      <Resource
+        name="blogposts"
+        list={BlogpostList}
+        create={BlogpostCreate}
+        edit={BlogpostEdit}
+        show={BlogpostShow}
       />
     </Admin>
   );

@@ -2,6 +2,7 @@ import client from './client';
 import { GetApiQueryBase } from './interfaces';
 
 export interface PortfolioInterface {
+  _id: string;
   title: string;
   subtitle?: string;
   thumbnail?: string;
@@ -9,6 +10,8 @@ export interface PortfolioInterface {
   link?: Record<string, string>;
   date: Date;
 }
+
+export type PortfolioDto = Omit<PortfolioInterface, '_id'>;
 
 export const GetPortfolio = async (
   params?: {
@@ -18,59 +21,70 @@ export const GetPortfolio = async (
       date?: { from?: Date; to?: Date };
     };
   } & GetApiQueryBase,
-): Promise<{ data: PortfolioInterface[]; total: number }> => {
+): Promise<
+  | { result: true; data: PortfolioInterface[]; total: number }
+  | { result: false; message?: string }
+> => {
   const res = await client.get(`/portfolios`, {
     params: {
       pagination: {
-        limit: params?.pagination?.limit || 0,
+        limit: params?.pagination?.limit || 10,
         offset: params?.pagination?.offset || 0,
       },
-      query: {
-        date: params?.query?.date,
-        ...params?.query,
-      },
+      query: params?.query,
       sort: params?.sort,
     },
   });
 
-  const data = Array.isArray(res.data.data)
-    ? res.data.data.map((v: Record<string, any>) => {
-        return {
-          ...v,
-          date: new Date(v.date),
-        };
-      })
-    : { ...res.data, date: new Date(res.data.date) };
+  if (!res.result) {
+    return { result: false, message: res.data?.message };
+  }
 
-  return { data, total: res.data.total };
+  if (!Array.isArray(res.data.data)) {
+    return { result: false, message: 'Data invalid' };
+  }
+
+  const data = res.data.data.map((v: Record<string, any>) => {
+    return {
+      ...v,
+      date: new Date(v.date),
+    };
+  });
+
+  return { result: true, data, total: res.data.total };
 };
 
 export const GetPortfolioById = async (
   id: string,
-): Promise<PortfolioInterface> => {
+): Promise<
+  | { result: true; data: PortfolioInterface }
+  | { result: false; message?: string }
+> => {
   const res = await client.get(`/portfolios/${id}`);
 
-  return res.data;
+  if (res.result) {
+    return { result: true, data: res.data };
+  }
+
+  return { result: false, message: res.data?.message };
 };
 
 export const PatchPortfolio = async (
   id: string,
-  props: Partial<PortfolioInterface>,
+  props: Partial<PortfolioDto>,
 ): Promise<
   | {
       result: true;
-      data: Record<string, any>;
+      data: PortfolioInterface;
     }
   | { result: false; message: string }
 > => {
   const res = await client.patch(`/portfolios/${id}`, props);
 
   if (res.result) {
-    const { _id, ...rest } = res.data;
-
     return {
       result: true,
-      data: { id: _id, ...rest },
+      data: res.data,
     };
   }
 
@@ -85,7 +99,7 @@ export const DeletePortfolio = async (
 ): Promise<
   | {
       result: true;
-      data: Record<string, any>;
+      data: PortfolioInterface;
     }
   | {
       result: false;
@@ -95,10 +109,9 @@ export const DeletePortfolio = async (
   const res = await client.delete(`/portfolios/${id}`);
 
   if (res.result) {
-    const { _id, ...rest } = res.data;
     return {
       result: true,
-      data: { id: _id, ...rest },
+      data: res.data,
     };
   }
 
@@ -109,11 +122,11 @@ export const DeletePortfolio = async (
 };
 
 export const PostPortfolio = async (
-  props: PortfolioInterface,
+  props: PortfolioDto,
 ): Promise<
   | {
       result: true;
-      data: Record<string, any>;
+      data: PortfolioInterface;
     }
   | { result: false; message: string }
 > => {
@@ -121,7 +134,6 @@ export const PostPortfolio = async (
 
   if (res.result) {
     return { result: true, data: res.data };
-  } else {
-    return { result: false, message: res.data?.message || 'Request failed' };
   }
+  return { result: false, message: res.data?.message || 'Request failed' };
 };
