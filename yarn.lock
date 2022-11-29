@@ -8666,7 +8666,7 @@ __metadata:
     prettier: ^2.8.0
     quickcert: ^1.1.2
     react: ^18.2.0
-    react-admin: ^4.5.2
+    react-admin: ^4.5.4
     react-app-rewire-alias: ^1.1.7
     react-bootstrap: ^2.6.0
     react-dom: ^18.2.0
@@ -14474,9 +14474,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ra-ui-materialui@npm:^4.5.2":
-  version: 4.5.2
-  resolution: "ra-ui-materialui@npm:4.5.2"
+"ra-ui-materialui@npm:^4.5.4":
+  version: 4.5.4
+  resolution: "ra-ui-materialui@npm:4.5.4"
   dependencies:
     autosuggest-highlight: ^3.1.1
     clsx: ^1.1.1
@@ -14499,7 +14499,7 @@ __metadata:
     react-hook-form: "*"
     react-router: ^6.1.0
     react-router-dom: ^6.1.0
-  checksum: 0aa6164d46e6f36bfc07f9d50deabbf88cfaba6338483a7e892ab0b2679576a14d151513f3e28da8c5760eee6161269d30e2b8439118ac8cf6c0244a72cf90b8
+  checksum: caf71b260078c0bab1453279b9f0bc3ad0fa3740a4cda55c7095016ab539dca34c294cb6fd7a286ecc4f116831b8fb901dc26122221c6f0d25ab4a1076e3c8ab
   languageName: node
   linkType: hard
 
@@ -14547,9 +14547,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-admin@npm:^4.5.2":
-  version: 4.5.2
-  resolution: "react-admin@npm:4.5.2"
+"react-admin@npm:^4.5.4":
+  version: 4.5.4
+  resolution: "react-admin@npm:4.5.4"
   dependencies:
     "@emotion/react": ^11.4.1
     "@emotion/styled": ^11.3.0
@@ -14559,14 +14559,14 @@ __metadata:
     ra-core: ^4.5.2
     ra-i18n-polyglot: ^4.5.2
     ra-language-english: ^4.5.2
-    ra-ui-materialui: ^4.5.2
+    ra-ui-materialui: ^4.5.4
     react-hook-form: ^7.34.2
     react-router: ^6.1.0
     react-router-dom: ^6.1.0
   peerDependencies:
     react: ^16.9.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
-  checksum: 6362553f536cf606d5b05838f292a493becc57d5fee1dc904febef0141204435b679d5cb08e0d33da5b7ff585d6fb97e87bd544c177a2035862f387122e2a8d9
+  checksum: 87cb461391b42ddbc663c4c1636af140d3cd6dbd665c3ebaa9e16a951603222bc8200d5504d484452d6983881946cfbb1c95e94b53f25e19112cf6e6c4c860b3
   languageName: node
   linkType: hard
 
