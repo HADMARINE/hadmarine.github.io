@@ -8660,7 +8660,7 @@ __metadata:
     lodash: ^4.17.21
     mobx: ^6.7.0
     mobx-react: ^7.6.0
-    mobx-state-tree: ^5.1.6
+    mobx-state-tree: ^5.1.7
     node-sass: ^8.0.0
     postcss: ^8.4.19
     prettier: ^2.8.0
@@ -12278,12 +12278,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobx-state-tree@npm:^5.1.6":
-  version: 5.1.6
-  resolution: "mobx-state-tree@npm:5.1.6"
+"mobx-state-tree@npm:^5.1.7":
+  version: 5.1.7
+  resolution: "mobx-state-tree@npm:5.1.7"
   peerDependencies:
     mobx: ^6.3.0
-  checksum: 25d2afe87af3aebd9ddfd6eb18bf628f93a5f7295c8dbb20e2a85601931b8553523f712015af5a3da14a006c170aedfc1d30af71f526762fbf5f6935e181499d
+  checksum: f292efc7ec7bddfd422c6169a78e9e895055d70604a04358f46a0ba7be10962c7c568fd8940fcce1e8d7be380f6baaf5570916357f5e8bdcdb51a884558e53c7
   languageName: node
   linkType: hard
 
