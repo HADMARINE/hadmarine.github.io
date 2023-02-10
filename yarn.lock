@@ -8668,7 +8668,7 @@ __metadata:
     react: ^18.2.0
     react-admin: ^4.5.2
     react-app-rewire-alias: ^1.1.7
-    react-bootstrap: ^2.6.0
+    react-bootstrap: ^2.7.1
     react-dom: ^18.2.0
     react-hot-toast: ^2.4.0
     react-is: ^18.2.0
@@ -14604,9 +14604,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-bootstrap@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "react-bootstrap@npm:2.6.0"
+"react-bootstrap@npm:^2.7.1":
+  version: 2.7.1
+  resolution: "react-bootstrap@npm:2.7.1"
   dependencies:
     "@babel/runtime": ^7.17.2
     "@restart/hooks": ^0.4.6
@@ -14627,7 +14627,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 950a2afc4def2c989be74fa4093f94b289da8c73e3bac5a842aac19690730d6ffdb3959b219fc87a01ae006a08bdf636361738d839bae88c24946c0bf001b341
+  checksum: 1acc5eba7ff54dffd9950bb1ae52e4eb32fd52b5306b4932a2cefd8dab946f23478f67a1edff61acad5ab12c3b0dbf3204bf881c55f9207247b10f9b48e159d4
   languageName: node
   linkType: hard
 
