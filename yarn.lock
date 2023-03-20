@@ -2916,6 +2916,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remix-run/router@npm:1.4.0":
+  version: 1.4.0
+  resolution: "@remix-run/router@npm:1.4.0"
+  checksum: 707dce35a2b8138005cf19e63f6fd3c4da05b4b892e9e9118e8b727c3b95953efe27307ca2df35084044df30fa1fc367cf0bbc98d1ded9020c82e61e6242caaf
+  languageName: node
+  linkType: hard
+
 "@restart/hooks@npm:^0.4.6, @restart/hooks@npm:^0.4.7":
   version: 0.4.7
   resolution: "@restart/hooks@npm:0.4.7"
@@ -8679,7 +8686,7 @@ __metadata:
     react-query: ^3.39.2
     react-rainbow-components: ^1.31.0
     react-router: ^6.4.3
-    react-router-dom: ^6.4.3
+    react-router-dom: ^6.9.0
     react-scripts: ^5.0.1
     react-test-renderer: ^18.2.0
     remark-gfm: ^3.0.1
@@ -14870,7 +14877,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.1.0, react-router-dom@npm:^6.4.3":
+"react-router-dom@npm:^6.1.0":
   version: 6.4.3
   resolution: "react-router-dom@npm:6.4.3"
   dependencies:
@@ -14883,6 +14890,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-router-dom@npm:^6.9.0":
+  version: 6.9.0
+  resolution: "react-router-dom@npm:6.9.0"
+  dependencies:
+    "@remix-run/router": 1.4.0
+    react-router: 6.9.0
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 4d593491ab8db5611feda70002c62902baebb84d5c1c5e5b6172496f31f91130deee132bf4240dea634a88cb86c76d6da348f15b9cd5e5197be455efd88edf72
+  languageName: node
+  linkType: hard
+
 "react-router@npm:6.4.3, react-router@npm:^6.1.0, react-router@npm:^6.4.3":
   version: 6.4.3
   resolution: "react-router@npm:6.4.3"
@@ -14891,6 +14911,17 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
   checksum: b89c0495c6837b1457915c08c5acc4eb7a2e9e3fae0420faf9bfc6311ecdfe78627cc1034c0e975bccd9aeeb70d1dcc5021322779dd3053d94c47e37339d77eb
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.9.0":
+  version: 6.9.0
+  resolution: "react-router@npm:6.9.0"
+  dependencies:
+    "@remix-run/router": 1.4.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: b2a5f42e042bee7a7f116ca7817b0e58359e5353d84887c9fe7a633d7490c03b1e0ae37cd01830c2a381e3d1e7d501bb4751e53cc3d491e25f36582d3f6e0546
   languageName: node
   linkType: hard
 
