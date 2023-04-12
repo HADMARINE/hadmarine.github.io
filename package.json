@@ -86,7 +86,7 @@
     "@types/lodash": "^4.14.190",
     "@types/node": "^18.11.9",
     "@types/node-sass": "^4.11.3",
-    "@types/react": "^18.0.25",
+    "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.9",
     "@types/react-modal": "^3.13.1",
     "@types/react-portal": "^4.0.4",
