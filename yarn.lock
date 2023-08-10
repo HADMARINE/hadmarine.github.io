@@ -8689,7 +8689,7 @@ __metadata:
     ts-jest: ^29.0.3
     typescript: ^4.9.3
     universal-cookie: ^4.0.4
-    use-debounce: ^8.0.4
+    use-debounce: ^9.0.4
     web-vitals: ^3.1.0
   languageName: unknown
   linkType: soft
@@ -17619,12 +17619,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-debounce@npm:^8.0.4":
-  version: 8.0.4
-  resolution: "use-debounce@npm:8.0.4"
+"use-debounce@npm:^9.0.4":
+  version: 9.0.4
+  resolution: "use-debounce@npm:9.0.4"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 0f8b9e571f68a4694033ec00690bf73d781ac890140ae9ed4b330f71f7adb3f7d7df5cdaa32923c4d03fdc9de8a11be0f84301175ae4f66208af52ad03c55504
+  checksum: 37da4ecbe4e10a6230580cac03a8cae1788ea3e417dfdd92fcf654325458cf1b4567fd57bebf888edab62701a6abe47059a585008fd04228784f223f94d66ce4
   languageName: node
   linkType: hard
 
