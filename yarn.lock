@@ -3663,10 +3663,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.11.9":
+"@types/node@npm:*":
   version: 18.11.9
   resolution: "@types/node@npm:18.11.9"
   checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.5.6":
+  version: 20.5.6
+  resolution: "@types/node@npm:20.5.6"
+  checksum: d2ce44f1cfa3fd00fe7426f7cf9a46d680cd57802b874ed5618e7d9101a9c6b8de37f08c0e7185ee06fb363ad492549c3ea69665c7e8e31c7813210ed8e89005
   languageName: node
   linkType: hard
 
@@ -8630,7 +8637,7 @@ __metadata:
     "@types/commonmark": ^0.27.5
     "@types/jest": ^29.2.3
     "@types/lodash": ^4.14.190
-    "@types/node": ^18.11.9
+    "@types/node": ^20.5.6
     "@types/node-sass": ^4.11.3
     "@types/react": ^18.0.25
     "@types/react-dom": ^18.0.9
