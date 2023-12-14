@@ -2916,6 +2916,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remix-run/router@npm:1.14.0":
+  version: 1.14.0
+  resolution: "@remix-run/router@npm:1.14.0"
+  checksum: 573138c1f5d93130bf950fa1abf209280abf831a065eecb70965d55239ffda3a53a75a0e15c79cea408734efefcac03041fc07a29e98adaca9aa309a1d1c9656
+  languageName: node
+  linkType: hard
+
 "@restart/hooks@npm:^0.4.6, @restart/hooks@npm:^0.4.7":
   version: 0.4.7
   resolution: "@restart/hooks@npm:0.4.7"
@@ -8679,7 +8686,7 @@ __metadata:
     react-query: ^3.39.2
     react-rainbow-components: ^1.31.0
     react-router: ^6.4.3
-    react-router-dom: ^6.4.3
+    react-router-dom: ^6.21.0
     react-scripts: ^5.0.1
     react-test-renderer: ^18.2.0
     remark-gfm: ^3.0.1
@@ -14870,7 +14877,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.1.0, react-router-dom@npm:^6.4.3":
+"react-router-dom@npm:^6.1.0":
   version: 6.4.3
   resolution: "react-router-dom@npm:6.4.3"
   dependencies:
@@ -14880,6 +14887,30 @@ __metadata:
     react: ">=16.8"
     react-dom: ">=16.8"
   checksum: 67a44d8dc45761a1c88793cac73839bb657168ef61b9473eb39b186b4a3ea1472454fd96f8997dc541cb1e79a723d62f9503cbc9179b63b8f1d634ed6d2b079a
+  languageName: node
+  linkType: hard
+
+"react-router-dom@npm:^6.21.0":
+  version: 6.21.0
+  resolution: "react-router-dom@npm:6.21.0"
+  dependencies:
+    "@remix-run/router": 1.14.0
+    react-router: 6.21.0
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: ea9dfc1e089c0623c7cb45f2a1da807a3505e8c816d5a7021d3d0d04a7a9541850b45f00195b8fa3cc5f981d59170bc27f1ba81407f0d39346642e9759a2c059
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.21.0":
+  version: 6.21.0
+  resolution: "react-router@npm:6.21.0"
+  dependencies:
+    "@remix-run/router": 1.14.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: e9e50767cf85e7e216aed97dcc280a8b0b83e4f0790274096991823046bb86aa1aaab3ba10a4de11bd89d73c9eeb880df1d50055e6e4f44fcdfad38adcd6c1b8
   languageName: node
   linkType: hard
 
