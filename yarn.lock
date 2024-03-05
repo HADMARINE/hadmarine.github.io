@@ -3794,7 +3794,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16.9.11, @types/react@npm:^18.0.25":
+"@types/react@npm:*, @types/react@npm:>=16.9.11":
   version: 18.0.25
   resolution: "@types/react@npm:18.0.25"
   dependencies:
@@ -3802,6 +3802,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 231d658c45abdef044a716b4502774f1585d8336d73b2f5bd68f181acbfc874b7a457686ecd29b415b43ed0922c309bab7e2cf96832d188a3f4f1b02f2af760a
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.2.63":
+  version: 18.2.63
+  resolution: "@types/react@npm:18.2.63"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: f3d496b9e3c40fe984aa2f22e0f3776a4f0be223f436ad3a2b79fed4b496ba1549999083408c2c975e5c8b029bfc9e8a2924788325e00de205cf70a10ef772d0
   languageName: node
   linkType: hard
 
@@ -8632,7 +8643,7 @@ __metadata:
     "@types/lodash": ^4.14.190
     "@types/node": ^18.11.9
     "@types/node-sass": ^4.11.3
-    "@types/react": ^18.0.25
+    "@types/react": ^18.2.63
     "@types/react-dom": ^18.0.9
     "@types/react-modal": ^3.13.1
     "@types/react-portal": ^4.0.4
