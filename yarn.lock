@@ -3663,10 +3663,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.11.9":
+"@types/node@npm:*":
   version: 18.11.9
   resolution: "@types/node@npm:18.11.9"
   checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^24.7.1":
+  version: 24.7.1
+  resolution: "@types/node@npm:24.7.1"
+  dependencies:
+    undici-types: ~7.14.0
+  checksum: 4e3367dd7ab7328aca1ea96451469baca16af0f5b0dd9fa0c8726b410973b2f72087b7e649c9040b91602ec2119efe68552a29403a7251e31e3c3ffbb476c356
   languageName: node
   linkType: hard
 
@@ -8630,7 +8639,7 @@ __metadata:
     "@types/commonmark": ^0.27.5
     "@types/jest": ^29.2.3
     "@types/lodash": ^4.14.190
-    "@types/node": ^18.11.9
+    "@types/node": ^24.7.1
     "@types/node-sass": ^4.11.3
     "@types/react": ^18.0.25
     "@types/react-dom": ^18.0.9
@@ -17243,6 +17252,13 @@ __metadata:
   peerDependencies:
     react: ">=15.0.0"
   checksum: 3345c0c1916193ddb9cc6f2b78711dc9f22b919d780485e15b95690722e9d1797fc702c4ebb30c0acaae6a772b865d0a9ddc83fa1da44958f089aee78f2f5eab
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.14.0":
+  version: 7.14.0
+  resolution: "undici-types@npm:7.14.0"
+  checksum: bd28cb36b33a51359f02c27b84bfe8563cdad57bdab0aa6ac605ce64d51aff49fd0aa4cb2d3b043caaa93c3ec42e96b5757df5d2d9bcc06a5f3e71899c765035
   languageName: node
   linkType: hard
 
